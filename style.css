@@ -78,3 +78,17 @@ footer {
   font-size: 14px;
   margin-top: 30px;
 }
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.info-list {
+  list-style-type: disc;
+  margin-top: 10px;
+  padding-left: 20px;
+}
