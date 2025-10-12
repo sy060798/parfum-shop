@@ -100,3 +100,96 @@ footer {
     color: #6b4c3b; /* warna cokelat elegan, bisa diganti */
   }
 </style>
+/* ===== Promo slider styling ===== */
+.promo-slider-wrap {
+  position: absolute; /* tetap di atas gambar promo */
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* biar klik ke gambar tetap bekerja, kontrol pakai tombol */
+}
+
+.promo-slider {
+  width: min(900px, 90%);
+  overflow: hidden;
+  pointer-events: auto; /* aktifkan interaksi di dalam slider */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.promo-slider .slide {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.promo-slider .slide-block {
+  background: rgba(0,0,0,0.85); /* blok hitam semi-opaque */
+  padding: 28px 30px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.slide-text {
+  color: #fff;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  pointer-events: none;
+}
+
+/* responsive smaller screens */
+@media (max-width: 520px) {
+  .slide-text { font-size: 0.95rem; padding: 0 6px; }
+  .promo-slider .slide-block { padding: 18px; min-height: 90px; }
+}
+
+/* ===== Sliding animation (uses transform on inner track) ===== */
+.promo-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(.22,.9,.29,1);
+  will-change: transform;
+}
+
+/* Controls (prev/next) */
+.promo-controls {
+  position: absolute;
+  right: calc(5% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.promo-controls button {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+
+.promo-controls button:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+/* Jika ingin sembunyikan kontrol di mobile */
+@media (max-width: 520px) {
+  .promo-controls { display: none; }
+}
+
