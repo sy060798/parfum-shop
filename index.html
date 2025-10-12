@@ -21,11 +21,33 @@
 <!-- 🌹 Bagian Gambar Promo -->
 <section class="promo">
   <img src="https://sy060798.github.io/parfum-shop/images/promo-banner.jpg" alt="Promo Scant Parfum">
-  <div class="promo-text">
-    <h2>✨ Promo Spesial Oktober! ✨</h2>
-    <p>Dapatkan <strong>diskon hingga 30%</strong> untuk semua koleksi parfum pilihan.</p>
-    <a href="https://wa.me/6281384248717?text=Halo,%20saya%20tertarik%20dengan%20promo%20parfum%20Scant" class="promo-btn">💬 Pesan Sekarang</a>
+ <div class="promo-text promo-slider-wrap" aria-label="Promo Spesial Scant Parfum">
+  <div class="promo-slider" id="promoSlider" role="list">
+    <div class="slide" role="listitem">
+      <div class="slide-block">
+        <p class="slide-text">✨ Promo Spesial Oktober — Diskon hingga <strong>30%</strong> untuk koleksi favorit!</p>
+      </div>
+    </div>
+
+    <div class="slide" role="listitem">
+      <div class="slide-block">
+        <p class="slide-text">🎁 Gratis ongkir untuk pembelian minimum Rp 200.000 — hanya bulan ini!</p>
+      </div>
+    </div>
+
+    <div class="slide" role="listitem">
+      <div class="slide-block">
+        <p class="slide-text">🕒 Flash Sale: 2 jam setiap Jumat — buruan sebelum kehabisan!</p>
+      </div>
+    </div>
   </div>
+
+  <!-- tombol opsional (bisa dihapus) -->
+  <div class="promo-controls">
+    <button id="prevPromo" aria-label="Sebelumnya">‹</button>
+    <button id="nextPromo" aria-label="Berikutnya">›</button>
+  </div>
+</div>
 </section>
 
   
