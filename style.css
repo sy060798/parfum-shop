@@ -193,3 +193,138 @@ footer {
   .promo-controls { display: none; }
 }
 
+/* ===== Promo Section Responsif ===== */
+.promo {
+  position: relative;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1200px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.promo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+/* ===== Slider Text Wrapper ===== */
+.promo-slider-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* biar klik ke gambar promo tetap bisa */
+}
+
+.promo-slider {
+  width: 85%;
+  overflow: hidden;
+  display: flex;
+  scroll-behavior: smooth;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+
+.slide {
+  flex: 0 0 100%;
+  transition: transform 0.4s ease;
+}
+
+.slide-block {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 30px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.slide-text {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== Tombol Navigasi ===== */
+.promo-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.promo-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.promo-controls button:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Untuk tablet (lebar 768px ke bawah) */
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .promo-slider {
+    width: 90%;
+  }
+
+  .promo-controls button {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+}
+
+/* Untuk HP kecil (lebar 480px ke bawah) */
+@media (max-width: 480px) {
+  .promo {
+    border-radius: 0; /* biar full screen di HP */
+  }
+
+  .slide-block {
+    padding: 18px;
+    min-height: 90px;
+  }
+
+  .slide-text {
+    font-size: 0.95rem;
+  }
+
+  .promo-controls {
+    padding: 0 10px;
+  }
+
+  .promo-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
