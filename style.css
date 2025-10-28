@@ -7,9 +7,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fafafa;
+  background-image: url('https://sy060798.github.io/parfum-shop/images/images.jpeg');
+  background-size: cover;        /* biar foto menutupi seluruh layar */
+  background-position: center;   /* posisi foto di tengah */
+  background-repeat: no-repeat;  /* biar nggak diulang */
   color: #333;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 /* === HEADER === */
