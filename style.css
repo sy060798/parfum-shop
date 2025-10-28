@@ -322,4 +322,49 @@ footer {
   }
 }
 
+/* === PROMO VIDEO SECTION === */
+.promo-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background: #fdfdfd;
+}
+
+.promo-item {
+  position: relative;
+  width: 45%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.promo-item:hover {
+  transform: scale(1.03);
+}
+
+.promo-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.promo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 12px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+}
 
