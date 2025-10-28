@@ -209,8 +209,8 @@ nav a:hover {
 
 .promo-item {
   position: relative;
-  width: 35%;            /* Lebar dikurangi biar dua pas di tengah */
-  max-width: 320px;      /* Batas maksimum ukuran */
+  width: 40%;            /* Lebar dikurangi biar dua pas di tengah */
+  max-width: 120px;      /* Batas maksimum ukuran */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
