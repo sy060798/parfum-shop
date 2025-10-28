@@ -9,7 +9,6 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa;
   color: #333;
-  margin: 0;
   line-height: 1.5;
 }
 
@@ -114,7 +113,7 @@ nav a:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-/* === Efek gambar bergerak halus === */
+/* Efek gambar produk */
 .product-card img {
   border-radius: 10px;
   width: 100%;
@@ -191,81 +190,59 @@ nav a:hover {
   font-size: 1.15rem;
   font-weight: 600;
   text-align: center;
-  letter-spacing: 0.2px;
 }
 
 .slide-text strong {
   color: #0ea5a9;
 }
 
-/* === PRODUK PROMO KIRI-KANAN === */
+/* === PROMO VIDEO KIRI-KANAN === */
 .promo-products {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  gap: 30px;
   flex-wrap: wrap;
+  padding: 60px 20px;
+  background: #fdfdfd;
 }
 
 .promo-item {
   position: relative;
   width: 45%;
-  min-width: 280px;
   max-width: 480px;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .promo-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: scale(1.03);
 }
 
-.promo-item img {
+.promo-video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  transition: transform 0.6s ease;
-}
-
-.promo-item:hover img {
-  transform: scale(1.1);
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .promo-caption {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   background: rgba(0,0,0,0.55);
   color: #fff;
-  padding: 14px;
+  padding: 12px;
+  font-weight: 600;
   text-align: center;
   font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
-/* === SOSIAL MEDIA & FOOTER === */
-.social-links {
-  margin-top: 10px;
-}
-
-.social-links a {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.info-list {
-  list-style-type: disc;
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
+/* === FOOTER === */
 footer {
   background: #faf5ff;
   color: #555;
@@ -306,6 +283,11 @@ footer {
     display: block;
   }
 
+  .promo-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .product-grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -321,50 +303,3 @@ footer {
     font-size: 28px;
   }
 }
-
-/* === PROMO VIDEO SECTION === */
-.promo-products {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 50px 20px;
-  background: #fdfdfd;
-}
-
-.promo-item {
-  position: relative;
-  width: 45%;
-  max-width: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.promo-item:hover {
-  transform: scale(1.03);
-}
-
-.promo-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.promo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.55);
-  color: #fff;
-  padding: 12px;
-  font-weight: 600;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
