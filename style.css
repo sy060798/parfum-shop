@@ -196,21 +196,21 @@ nav a:hover {
   color: #0ea5a9;
 }
 
-/* === PROMO VIDEO KIRI-KANAN === */
+/* === PROMO FOTO / VIDEO KIRI-KANAN (versi kecil & rapi) === */
 .promo-products {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
+  align-items: flex-start;
+  gap: 25px;
   flex-wrap: wrap;
-  padding: 60px 20px;
+  padding: 50px 20px;
   background: #fdfdfd;
 }
 
 .promo-item {
   position: relative;
-  width: 45%;
-  max-width: 480px;
+  width: 35%;            /* Lebar dikurangi biar dua pas di tengah */
+  max-width: 320px;      /* Batas maksimum ukuran */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
@@ -218,15 +218,16 @@ nav a:hover {
 }
 
 .promo-item:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.promo-video {
+.promo-item img,
+.promo-item video {
   width: 100%;
-  height: auto;
+  height: 180px;         /* Foto/video lebih kecil dan proporsional */
+  object-fit: cover;
   display: block;
   border-radius: 12px;
-  object-fit: cover;
 }
 
 .promo-caption {
@@ -234,69 +235,27 @@ nav a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   color: #fff;
-  padding: 12px;
+  padding: 10px;
   font-weight: 600;
   text-align: center;
-  font-size: 1.1rem;
-}
-
-/* === FOOTER === */
-footer {
-  background: #faf5ff;
-  color: #555;
-  padding: 15px;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 40px;
+  font-size: 0.95rem;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  header {
-    padding: 16px 24px;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #9333ea;
-    width: 200px;
-    border-radius: 8px;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
   .promo-item {
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    max-width: 320px;
   }
 
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .promo-item img,
+  .promo-item video {
+    height: 200px;
   }
 }
 
-@media (max-width: 500px) {
-  .product-grid {
-    grid-template-columns: 1fr;
   }
 
   .judul-parfum {
