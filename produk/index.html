@@ -62,22 +62,9 @@
   <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
 </footer>
 
-<script>
-// --- Otomatis cari dan hubungkan style.css & script.js dari folder utama ---
+<!-- Hubungkan langsung file CSS & JS dari folder utama -->
+<link rel="stylesheet" href="../style.css">
+<script src="../script.js" defer></script>
 
-const currentPath = window.location.pathname;
-const depth = currentPath.split('/').filter(p => p).length - 1; 
-const prefix = '../'.repeat(depth);
-
-const styleLink = document.createElement('link');
-styleLink.rel = 'stylesheet';
-styleLink.href = prefix + 'style.css';
-document.head.appendChild(styleLink);
-
-const jsScript = document.createElement('script');
-jsScript.src = prefix + 'script.js';
-document.body.appendChild(jsScript);
-</script>
-<script src="../script.js"></script>
 </body>
 </html>
