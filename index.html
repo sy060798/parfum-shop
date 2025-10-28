@@ -60,21 +60,9 @@
     });
   </script>
 
-  <script>
-    // === Otomatis hubungkan style.css & script.js dari folder utama ===
-    const currentPath = window.location.pathname;
-    const depth = currentPath.split('/').filter(p => p).length - 1;
-    const prefix = depth > 0 ? '../'.repeat(depth) : '';
+  <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 
-    const styleLink = document.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = prefix + 'style.css';
-    document.head.appendChild(styleLink);
-
-    const jsScript = document.createElement('script');
-    jsScript.src = prefix + 'script.js';
-    document.body.appendChild(jsScript);
-  </script>
 
 </body>
 </html>
