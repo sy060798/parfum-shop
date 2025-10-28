@@ -61,16 +61,25 @@
   <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
 </footer>
 <script>
-// Buat elemen <link> untuk memanggil style.css dari folder utama
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = '../style.css'; // naik 1 folder ke atas
-document.head.appendChild(link);
+// --- Otomatis cari dan hubungkan style.css & script.js dari folder utama ---
 
-// Kalau kamu juga punya script.js di folder utama, bisa sekalian dimuat
-const script = document.createElement('script');
-script.src = '../script.js';
-document.body.appendChild(script);
+// Ambil URL halaman saat ini
+const currentPath = window.location.pathname;
+
+// Hitung berapa kali harus naik folder (../) agar sampai ke root
+const depth = currentPath.split('/').filter(p => p).length - 1; 
+const prefix = '../'.repeat(depth);
+
+// === Hubungkan style.css ===
+const styleLink = document.createElement('link');
+styleLink.rel = 'stylesheet';
+styleLink.href = prefix + 'style.css';
+document.head.appendChild(styleLink);
+
+// === Hubungkan script.js ===
+const jsScript = document.createElement('script');
+jsScript.src = prefix + 'script.js';
+document.body.appendChild(jsScript);
 </script>
 </body>
 </html>
