@@ -8,11 +8,12 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- File CSS -->
+  <!-- File CSS utama (akan diganti otomatis bila di subfolder) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ==== HEADER ==== -->
   <header>
     <a href="#" class="logo">MyBrand</a>
     <nav id="nav-menu">
@@ -21,15 +22,13 @@
       <a href="#">Layanan</a>
       <a href="#">Kontak</a>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
 
-    <!-- Tombol Mulai: arahkan ke folder produk -->
+    <!-- Tombol ke produk -->
     <a href="produk/index.html" class="btn-primary">Mulai</a>
   </header>
 
-  <!-- 🌹 Bagian Gambar Promo -->
+  <!-- ==== BAGIAN PROMO ==== -->
   <section class="promo">
     <div class="promo-text promo-slider-wrap" aria-label="Promo Spesial Scant Parfum">
       <div class="promo-slider" id="promoSlider" role="list">
@@ -55,34 +54,35 @@
       </div>
     </div>
   </section>
-<script>
+
+  <!-- ==== JAVASCRIPT ==== -->
+  <script>
+    // Toggle menu (untuk tampilan mobile)
     const toggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav-menu');
-
     toggle.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
   </script>
- <script>
-// === Otomatis hubungkan style.css & script.js dari folder utama ===
 
-// Ambil URL halaman saat ini
-const currentPath = window.location.pathname;
+  <script>
+    // === Otomatis hubungkan style.css & script.js dari folder utama ===
 
-// Hitung seberapa dalam folder-nya
-const depth = currentPath.split('/').filter(p => p).length - 1; 
-const prefix = depth > 0 ? '../'.repeat(depth) : ''; // kalau di root, prefix kosong
+    const currentPath = window.location.pathname;
+    const depth = currentPath.split('/').filter(p => p).length - 1; // hitung kedalaman folder
+    const prefix = depth > 0 ? '../'.repeat(depth) : ''; // kalau di root, kosong
 
-// Tambahkan style.css ke <head>
-const styleLink = document.createElement('link');
-styleLink.rel = 'stylesheet';
-styleLink.href = prefix + 'style.css';
-document.head.appendChild(styleLink);
+    // Tambahkan style.css ke <head>
+    const styleLink = document.createElement('link');
+    styleLink.rel = 'stylesheet';
+    styleLink.href = prefix + 'style.css';
+    document.head.appendChild(styleLink);
 
-// Tambahkan script.js ke akhir <body>
-const jsScript = document.createElement('script');
-jsScript.src = prefix + 'script.js';
-document.body.appendChild(jsScript);
-</script>
+    // Tambahkan script.js ke akhir <body>
+    const jsScript = document.createElement('script');
+    jsScript.src = prefix + 'script.js';
+    document.body.appendChild(jsScript);
+  </script>
+
 </body>
 </html>
