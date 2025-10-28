@@ -5,16 +5,11 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-image: url('https://sy060798.github.io/parfum-shop/images/begrond.jpeg');
-  background-size: cover;        /* biar foto menutupi seluruh layar */
-  background-position: center;   /* posisi foto di tengah */
-  background-repeat: no-repeat;  /* biar nggak diulang */
+body { font-family: 'Poppins', sans-serif; 
+  background: #1a1a1a; 
+  margin: 0; 
   color: #333;
-  line-height: 1.5;
-  min-height: 100vh;
-}
+  }
 
 /* === HEADER === */
 header {
