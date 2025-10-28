@@ -195,6 +195,18 @@ nav a:hover {
   color: #0ea5a9;
 }
 
+
+.info-list {
+  list-style: disc;        /* tetap pakai bullet (opsional) */
+  color: #fff;             /* warna teks putih */
+  font-size: 1rem;         /* ukuran normal */
+  line-height: 1.6;        /* jarak antar baris */
+  margin: 20px 0;          /* jarak atas-bawah */
+  padding-left: 20px;      /* biar bullet tidak terlalu mepet */
+}
+
+
+
 /* === PROMO FOTO / VIDEO KIRI-KANAN (fix tampilan sejajar) === */
 .promo-products {
   display: flex;
