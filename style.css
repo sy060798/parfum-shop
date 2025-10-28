@@ -193,3 +193,123 @@ footer {
   .promo-controls { display: none; }
 }
 
+/* === RESET & DASAR === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+}
+
+/* === NAVIGATION === */
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #0ea5a9;
+}
+
+/* === MENU TOGGLE (mobile) === */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* === TOMBOL MULAI === */
+.btn-primary {
+  background-color: #0ea5a9;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0891b2;
+  transform: translateY(-2px);
+}
+
+/* === BAGIAN PROMO === */
+.promo {
+  background: linear-gradient(135deg, #ecfeff, #f0fdfa);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.promo-text {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.slide-text strong {
+  color: #0ea5a9;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  nav a {
+    padding: 12px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* aktifkan menu saat diklik */
+  nav.active {
+    display: flex;
+  }
+}
