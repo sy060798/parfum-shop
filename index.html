@@ -63,6 +63,26 @@
       nav.classList.toggle('active');
     });
   </script>
-  <script src="../script.js"></script>
+ <script>
+// === Otomatis hubungkan style.css & script.js dari folder utama ===
+
+// Ambil URL halaman saat ini
+const currentPath = window.location.pathname;
+
+// Hitung seberapa dalam folder-nya
+const depth = currentPath.split('/').filter(p => p).length - 1; 
+const prefix = depth > 0 ? '../'.repeat(depth) : ''; // kalau di root, prefix kosong
+
+// Tambahkan style.css ke <head>
+const styleLink = document.createElement('link');
+styleLink.rel = 'stylesheet';
+styleLink.href = prefix + 'style.css';
+document.head.appendChild(styleLink);
+
+// Tambahkan script.js ke akhir <body>
+const jsScript = document.createElement('script');
+jsScript.src = prefix + 'script.js';
+document.body.appendChild(jsScript);
+</script>
 </body>
 </html>
