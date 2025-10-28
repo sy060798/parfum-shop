@@ -205,6 +205,13 @@ nav a:hover {
   padding-left: 20px;      /* biar bullet tidak terlalu mepet */
 }
 
+footer {
+  background-color: #000; /* hitam */
+  color: #fff;            /* teks putih */
+  text-align: center;
+  padding: 15px 0;
+}
+
 
 
 /* === PROMO FOTO / VIDEO KIRI-KANAN (fix tampilan sejajar) === */
@@ -267,3 +274,6 @@ nav a:hover {
     height: 220px;
   }
 }
+
+
+
