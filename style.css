@@ -241,7 +241,7 @@ footer {
 
 .promo-item img,
 .promo-item video {
-  width: 10%;            /* menyesuaikan lebar gambar mengikuti lebar card */
+  width: 100%;            /* menyesuaikan lebar gambar mengikuti lebar card */
   height: 200px;          /* ukuran gambar dan vidio */
   object-fit: cover;
   display: block;
