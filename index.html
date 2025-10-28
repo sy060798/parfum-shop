@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tambahan META untuk SEO & kompatibilitas -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Toko parfum lokal dengan promo menarik dan koleksi parfum elegan.">
+
   <title>Header Modern & Simpel</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Hubungkan file CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -41,28 +49,26 @@
     </div>
   </section>
 
-<div class="product-card">
-      <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Parfum Lokal" width="250">
-      <h3>Scant Oud</h3>
-      <p>Perpaduan aroma kayu oud dan rempah oriental yang mewah.</p>
-    </div>
+  <div class="product-card">
+    <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Parfum Lokal" width="250">
+    <h3>Scant Oud</h3>
+    <p>Perpaduan aroma kayu oud dan rempah oriental yang mewah.</p>
+  </div>
 
-  
   <!-- ==== JAVASCRIPT ==== -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav-menu');
-    toggle.addEventListener('click', () => nav.classList.toggle('active'));
-
-    // Tutup menu setelah klik link
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('active'));
-    });
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('active'));
+      document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => nav.classList.remove('active'));
+      });
+    }
   </script>
 
-  <link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-
+  <!-- Hubungkan file JS -->
+  <script src="script.js" defer></script>
 
 </body>
 </html>
