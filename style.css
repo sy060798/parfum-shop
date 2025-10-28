@@ -196,25 +196,25 @@ nav a:hover {
   color: #0ea5a9;
 }
 
-/* === PROMO FOTO / VIDEO KIRI-KANAN (versi kecil & rapi) === */
+/* === PROMO FOTO / VIDEO KIRI-KANAN (fix tampilan sejajar) === */
 .promo-products {
   display: flex;
-  justify-content: center;
+  justify-content: center;   /* Tengah secara horizontal */
   align-items: flex-start;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 20px;                 /* Jarak antar item */
+  flex-wrap: wrap;           /* Biar tetap rapi di layar kecil */
   padding: 50px 20px;
   background: #fdfdfd;
 }
 
 .promo-item {
-  position: relative;
-  width: 40%;            /* Lebar dikurangi biar dua pas di tengah */
-  max-width: 120px;      /* Batas maksimum ukuran */
+  flex: 1 1 300px;           /* Otomatis menyesuaikan lebar */
+  max-width: 400px;          /* Batas ukuran tiap item */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  background: white;
 }
 
 .promo-item:hover {
@@ -224,41 +224,35 @@ nav a:hover {
 .promo-item img,
 .promo-item video {
   width: 100%;
-  height: 180px;         /* Foto/video lebih kecil dan proporsional */
+  height: 200px;             /* Proporsional, tidak terlalu tinggi */
   object-fit: cover;
   display: block;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
 }
 
 .promo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
   padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   font-weight: 600;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 12px 12px;
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE: agar di HP tampil vertikal */
 @media (max-width: 768px) {
+  .promo-products {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .promo-item {
-    width: 80%;
-    max-width: 320px;
+    max-width: 90%;
   }
 
   .promo-item img,
   .promo-item video {
-    height: 200px;
-  }
-}
-
-  }
-
-  .judul-parfum {
-    font-size: 28px;
+    height: 220px;
   }
 }
