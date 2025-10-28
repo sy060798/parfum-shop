@@ -11,7 +11,7 @@
     </div>
 
     <div class="product-card">
-      <img src="https://sy060798.github.io/parfum-shop/images/download.jfif">
+      <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Parfum Lokal" width="250">
       <h3>Scant Oud</h3>
       <p>Perpaduan aroma kayu oud dan rempah oriental yang mewah.</p>
       <p class="price">Rp 150.000</p>
@@ -36,47 +36,44 @@
 
   </div>
 </section>
-<!-- Tambahan sosial media dan web -->
-  <div class="social-links">
-    <a href="https://www.instagram.com/username" target="_blank">
-      <img src="https://sy060798.github.io/parfum-shop/images/logo instagram.jfif" alt="Instagram" width="30">
-    </a>
-    <a href="https://www.tiktok.com/@username" target="_blank">
-      <img src="https://sy060798.github.io/parfum-shop/images/logo tiktok.png" alt="TikTok" width="30">
-    </a>
-    <a href="https://shopee.co.id/username" target="_blank">
-      <img src="https://sy060798.github.io/parfum-shop/images/logo shope.jfif" alt="Shopee" width="30">
-    </a>
-  </div>
 
-  <!-- Contoh list 4 baris -->
-  <ul class="info-list">
-    <li>Kualitas aroma premium</li>
-    <li>Pengiriman cepat dan aman</li>
-    <li>Harga terjangkau untuk semua</li>
-    <li>Layanan pelanggan ramah & siap membantu</li>
-  </ul>
-</footer>
-  <footer>
+<!-- Tambahan sosial media dan web -->
+<div class="social-links">
+  <a href="https://www.instagram.com/username" target="_blank">
+    <img src="https://sy060798.github.io/parfum-shop/images/logo instagram.jfif" alt="Instagram" width="30">
+  </a>
+  <a href="https://www.tiktok.com/@username" target="_blank">
+    <img src="https://sy060798.github.io/parfum-shop/images/logo tiktok.png" alt="TikTok" width="30">
+  </a>
+  <a href="https://shopee.co.id/username" target="_blank">
+    <img src="https://sy060798.github.io/parfum-shop/images/logo shope.jfif" alt="Shopee" width="30">
+  </a>
+</div>
+
+<!-- List info -->
+<ul class="info-list">
+  <li>Kualitas aroma premium</li>
+  <li>Pengiriman cepat dan aman</li>
+  <li>Harga terjangkau untuk semua</li>
+  <li>Layanan pelanggan ramah & siap membantu</li>
+</ul>
+
+<footer>
   <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
 </footer>
+
 <script>
 // --- Otomatis cari dan hubungkan style.css & script.js dari folder utama ---
 
-// Ambil URL halaman saat ini
 const currentPath = window.location.pathname;
-
-// Hitung berapa kali harus naik folder (../) agar sampai ke root
 const depth = currentPath.split('/').filter(p => p).length - 1; 
 const prefix = '../'.repeat(depth);
 
-// === Hubungkan style.css ===
 const styleLink = document.createElement('link');
 styleLink.rel = 'stylesheet';
 styleLink.href = prefix + 'style.css';
 document.head.appendChild(styleLink);
 
-// === Hubungkan script.js ===
 const jsScript = document.createElement('script');
 jsScript.src = prefix + 'script.js';
 document.body.appendChild(jsScript);
