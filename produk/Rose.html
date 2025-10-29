@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scant Rose - Detail Produk</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" class="logo">Scant Parfum</a>
+  </header>
+
+<hr class="pemisah-section">
+
+  <section class="detail-produk">
+    <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Rose" class="detail-img">
+    <div class="detail-info">
+    
+<hr class="pemisah-section">
+ 
+	 <h2>Scant Rose</h2>
+	  
+	  <!-- Keterangan produk -->
+	  
+      <p>Aroma mawar lembut dengan sentuhan elegan feminin, cocok untuk kamu yang ingin tampil anggun setiap saat.</p>
+      
+	  <hr class="pemisah-section">
+	  
+	  <a href="https://wa.me/6281384248717?text=Halo,%20saya%20ingin%20pesan%20Scant%20Rose" class="wa-btn">💬 Pesan via WhatsApp</a>
+    </div>
+  </section>
+  <!-- ========================================================== -->
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+  display: flex;
+  justify-content: center;     /* isi di tengah */
+  align-items: center;
+  position: relative;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #d946ef, #9333ea);
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  position: absolute;          /* tombol tetap kanan */
+  right: 40px;
+  background: #fff;
+  color: #9333ea;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #9333ea;
+  color: #fff;
+}
+
+    /* === BAGIAN DETAIL PRODUK === */
+    .detail-produk {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .detail-img {
+      width: 100%;
+      max-width: 400px;      /* batas maksimum di layar besar */
+      height: auto;          /* biar proporsional di semua ukuran layar */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .detail-info {
+      max-width: 500px;
+      padding: 0 15px;
+    }
+
+    .detail-info h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #6b4c3b;
+    }
+
+    .detail-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .wa-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.05);
+      background-color: #128C7E;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .detail-img {
+        max-width: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .detail-img {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .detail-img {
+        max-width: 90%;     /* gambar isi layar di HP kecil */
+      }
+    }
+  </style>
+</body>
+</html>
