@@ -5,51 +5,56 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
+body { font-family: 'Poppins', sans-serif; 
+  background: #1a1a1a; 
+  margin: 0; 
+  color: #333;
+  }
 
 /* === HEADER === */
 header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
   padding: 16px 48px;
   background: linear-gradient(135deg, #d946ef, #9333ea);
   color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
 
-.btn-primary {
-  position: absolute;
-  right: 40px;
-  background: #fff;
-  color: #9333ea;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease;
+nav {
+  display: flex;
+  gap: 24px;
 }
 
-.btn-primary:hover {
-  background: #9333ea;
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #fde68a;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
   color: #fff;
 }
+
 /* Tombol "Mulai" */
 .btn-primary {
   background-color: #0ea5a9;
@@ -351,3 +356,4 @@ footer {
 }
 
 
+ 
