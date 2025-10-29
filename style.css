@@ -354,3 +354,74 @@ footer {
   transform: scale(1.2);    /* efek zoom saat di-hover */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
+
+
+/* === BAGIAN KHUSUS DETAIL PRODUK (ROSE) === */
+
+.detail-produk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  color: #000;
+}
+
+.detail-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+.detail-info {
+  max-width: 500px;
+  padding: 0 15px;
+}
+
+.detail-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #6b4c3b;
+}
+
+.detail-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.wa-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.wa-btn:hover {
+  transform: scale(1.05);
+  background-color: #128C7E;
+}
+
+/* RESPONSIVE KHUSUS DETAIL PRODUK */
+@media (max-width: 768px) {
+  .detail-img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-img {
+    max-width: 90%;
+  }
+}
