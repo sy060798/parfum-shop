@@ -361,6 +361,20 @@ footer {
 }
 
 
+/* === RESET DASAR === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.5;
+}
+
 /* === DETAIL PRODUK === */
 .product-detail {
   display: flex;
@@ -377,14 +391,17 @@ footer {
   scroll-behavior: smooth;
 }
 
-/* === SLIDER === */
+/* === SLIDER (BULAT & KECIL) === */
 .slider {
-  flex: 0 0 340px;
-  max-width: 340px;
-  border-radius: 18px;
+  position: relative;
+  flex: 0 0 250px;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  margin: auto;
 }
 
 .slides {
@@ -405,22 +422,22 @@ footer {
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 50%;
 }
 
 .slide .caption {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #000;
+  background: rgba(0,0,0,0.6);
   color: #fff;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: center;
   padding: 5px 0;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 50% 50%;
 }
 
 .navigation-manual {
@@ -505,16 +522,25 @@ footer {
 
 /* === RESPONSIF: PRESISI UNTUK HP === */
 @media (max-width: 768px) {
-  .product-detail {
+  body {
     transform: scale(0.9);
     transform-origin: top center;
-    padding: 20px 10px;
+    width: 110%;
+    overflow-x: scroll;
+  }
+
+  .product-detail {
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 25px;
+    padding: 25px 10px;
   }
 
   .slider {
-    max-width: 280px;
-    flex: 0 0 280px;
+    flex: 0 0 200px;
+    max-width: 200px;
   }
 
   .product-info {
@@ -523,7 +549,7 @@ footer {
   }
 
   .product-info h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .product-info .desc {
@@ -536,30 +562,4 @@ footer {
   }
 }
 
-/* === PAKSA TAMPILAN DESKTOP DI HP === */
-@media (max-width: 768px) {
-  body {
-    transform: scale(0.85);
-    transform-origin: top center;
-    width: 120%;
-    overflow-x: scroll;
-  }
-
-  .product-detail {
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    gap: 30px;
-  }
-
-  .slider {
-    max-width: 300px;
-  }
-
-  .product-info {
-    max-width: 380px;
-    text-align: left;
-  }
-}
 
