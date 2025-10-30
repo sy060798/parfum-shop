@@ -523,28 +523,26 @@ body {
 /* === RESPONSIF: PRESISI UNTUK HP === */
 @media (max-width: 768px) {
   body {
-    transform: scale(0.9);
-    transform-origin: top center;
-    width: 110%;
-    overflow-x: scroll;
+    /* hapus transform dan width */
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .product-detail {
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* agar slider dan info bisa turun */
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    gap: 25px;
-    padding: 25px 10px;
+    gap: 20px;
+    padding: 20px 10px;
   }
 
   .slider {
-    flex: 0 0 200px;
-    max-width: 200px;
+    flex: 1 1 200px;
+    max-width: 100%;
   }
 
   .product-info {
-    max-width: 300px;
+    flex: 1 1 250px;
+    max-width: 100%;
     padding: 20px;
   }
 
@@ -561,5 +559,4 @@ body {
     font-size: 0.9rem;
   }
 }
-
 
