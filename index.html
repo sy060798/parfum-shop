@@ -18,53 +18,58 @@
 </head>
 <body>
 
+
   <!-- ==== HEADER ==== -->
   <header>
     <a href="#" class="logo">MyBrand</a>
-    <a href="produk/index.html" class="btn-primary">Mulai</a>
   </header>
   
-<hr class="pemisah-section">
 
-  <!-- ==== BAGIAN PROMO ==== -->
-  <section class="promo">
-    <div class="promo-text promo-slider-wrap" aria-label="Promo Spesial Scant Parfum">
-      <div class="promo-slider" id="promoSlider" role="list">
-        <div class="slide" role="listitem">
-          <div class="slide-block">
-            <p class="slide-text">✨ Promo Spesial Oktober — Diskon hingga <strong>30%</strong> untuk koleksi favorit!</p>
-          </div>
-        </div>
-        <div class="slide" role="listitem">
-          <div class="slide-block">
-            <p class="slide-text">🎁 Gratis ongkir untuk pembelian minimum Rp 200.000 — hanya bulan ini!</p>
-          </div>
-        </div>
-        <div class="slide" role="listitem">
-          <div class="slide-block">
-            <p class="slide-text">🕒 Flash Sale: 2 jam setiap Jumat — buruan sebelum kehabisan!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ==== PRODUK ==== -->
+<section class="gallery">
+  <h2 class="judul-parfum moving-text">✨ Koleksi Parfum Kami ✨</h2>
+  
   
   <hr class="pemisah-section">
+  
+  
+  
+  
+  <div class="product-grid">
+    <!-- ==== PRODUK 1 ==== -->
+    <div class="product-card">
+      <!-- Link menuju halaman detail produk (produk/Rose.html) -->
+      <a href="produk/Rose.html">
+        <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Rose">
+      </a>
+      <h3>Scant Rose</h3>
+      <p>Aroma mawar lembut dengan sentuhan elegan feminin.</p>
+      <p class="price">Rp 120.000</p>
+      <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Scant%20Rose" class="wa-btn">
+        Pesan via WhatsApp
+      </a>
+    </div>
 
-  <!-- ==== PRODUK PROMO KIRI-KANAN ==== -->
-  <section class="promo-products">
-  <div class="promo-item">
-    <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Promo Parfum 1">
-    <div class="promo-caption">Promo Eksklusif: Scant Oud 30% OFF</div>
-  </div>
-  <div class="promo-item">
-    <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Promo Parfum 2">
-    <div class="promo-caption">Promo Spesial: Misty Rose 25% OFF</div>
+    <!-- ==== PRODUK 2 ==== -->
+    <div class="product-card">
+      <!-- Link menuju halaman detail produk (produk/Oud.html) -->
+      <a href="produk/Rose.html">
+        <img src="https://sy060798.github.io/parfum-shop/images/oud.jpg" alt="Scant Oud">
+      </a>
+      <h3>Scant Oud</h3>
+      <p>Aroma kayu oud dengan nuansa maskulin oriental.</p>
+      <p class="price">Rp 150.000</p>
+      <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Scant%20Oud" class="wa-btn">
+        Pesan via WhatsApp
+      </a>
+    </div>
+
   </div>
 </section>
 
+ <hr class="pemisah-section">
 
-<hr class="pemisah-section">
+  
 
 <!-- ==== PROMO VIDEO SECTION ==== -->
 
@@ -82,6 +87,20 @@
   
   <hr class="pemisah-section">
   
+  
+  <!-- ==== JAVASCRIPT ==== -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-menu');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => nav.classList.toggle('active'));
+      document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => nav.classList.remove('active'));
+      });
+    }
+  </script>
+
+
 <!-- Tambahan sosial media dan web -->
 <div class="social-links">
   <a href="https://www.instagram.com/username" target="_blank">
@@ -108,17 +127,10 @@
   <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
 </footer>
 
-  <!-- ==== JAVASCRIPT ==== -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav-menu');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => nav.classList.toggle('active'));
-      document.querySelectorAll('#nav-menu a').forEach(link => {
-        link.addEventListener('click', () => nav.classList.remove('active'));
-      });
-    }
-  </script>
+
+
+
+
   <script src="script.js" defer></script>
 
 </body>
