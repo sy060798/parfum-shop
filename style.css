@@ -536,4 +536,30 @@ footer {
   }
 }
 
+/* === PAKSA TAMPILAN DESKTOP DI HP === */
+@media (max-width: 768px) {
+  body {
+    transform: scale(0.85);
+    transform-origin: top center;
+    width: 120%;
+    overflow-x: scroll;
+  }
+
+  .product-detail {
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .slider {
+    max-width: 300px;
+  }
+
+  .product-info {
+    max-width: 380px;
+    text-align: left;
+  }
+}
 
