@@ -6,7 +6,6 @@
   <meta name="description" content="Scant Rose - Parfum aroma mawar lembut dan elegan, cocok untuk suasana romantis maupun harian.">
   <title>Scant Rose - Detail Produk | Scant Parfum</title>
 
-  <!-- CSS versi terbaru -->
   <link rel="stylesheet" href="../style.css?v=5">
 </head>
 <body>
@@ -17,52 +16,51 @@
   </header>
 
   <!-- DETAIL PRODUK -->
- <section class="product-detail">
-  <div class="slider">
-    <div class="slides">
+  <section class="product-detail">
+    <div class="slider">
       <input type="radio" name="radio-btn" id="img-1" checked>
       <input type="radio" name="radio-btn" id="img-2">
 
-      <div class="slide first">
-        <img src="img/parfum1.jpg" alt="Scant Parfum 1">
+      <div class="slides">
+        <div class="slide first">
+          <img src="img/parfum1.jpg" alt="Scant Parfum 1">
+          <div class="caption">Tampilan elegan dari Scant Rose</div>
+        </div>
+        <div class="slide">
+          <img src="img/parfum2.jpg" alt="Scant Parfum 2">
+          <div class="caption">Detail botol parfum Scant Rose</div>
+        </div>
       </div>
-      <div class="slide">
-        <img src="img/parfum2.jpg" alt="Scant Parfum 2">
+
+      <!-- Tombol navigasi manual -->
+      <div class="navigation-manual">
+        <label for="img-1" class="manual-btn"></label>
+        <label for="img-2" class="manual-btn"></label>
       </div>
     </div>
 
-    <!-- Tombol bulatan navigasi -->
-    <div class="navigation-manual">
-      <label for="img-1" class="manual-btn"></label>
-      <label for="img-2" class="manual-btn"></label>
+    <div class="product-info">
+      <h1>Scant Rose</h1>
+      <p class="price">Rp 250.000</p>
+      <p class="size">Ukuran: 100ml</p>
+      <p class="desc">Aroma mawar lembut dan elegan yang menghadirkan suasana romantis dalam setiap semprotan.</p>
+      <a href="https://wa.me/628xxxxxxxxxx" class="wa-btn">Pesan via WhatsApp</a>
     </div>
-  </div>
-
-  <div class="product-info">
-    <h1>Scant Parfum</h1>
-    <p class="price">Rp 250.000</p>
-    <p class="size">Ukuran: 100ml</p>
-    <p class="desc">Aroma maskulin elegan dengan kesan segar dan tajam.</p>
-    <a href="https://wa.me/628xxxxxxxxxx" class="wa-btn">Pesan via WhatsApp</a>
-  </div>
-</section>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
   </footer>
 
+  <script>
+    let counter = 1;
+    setInterval(() => {
+      document.getElementById('img-' + counter).checked = true;
+      counter++;
+      if (counter > 2) counter = 1;
+    }, 4000);
+  </script>
 
-<script>
-let counter = 1;
-setInterval(() => {
-  document.getElementById('img-' + counter).checked = true;
-  counter++;
-  if (counter > 2) counter = 1;
-}, 4000);
-</script>
-
-
-  
 </body>
 </html>
