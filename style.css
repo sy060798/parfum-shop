@@ -361,46 +361,43 @@ footer {
 }
 
 
-/* === DETAIL PRODUK (HALAMAN KEDUA) === */
+/* === DETAIL PRODUK (TAMPILAN DESKTOP DI HP) === */
 .product-detail {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 40px;
   padding: 50px 20px;
   background: #fff;
   color: #000;
   border-radius: 20px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  flex-wrap: nowrap;
+  overflow-x: auto; /* biar bisa digeser kalau layar kecil */
 }
 
-/* SLIDER DI KIRI */
-.product-detail .slider {
-  flex: 1 1 350px;
+/* SLIDER PRODUK DI KIRI */
+.slider {
+  flex: 0 0 350px;
   max-width: 350px;
-  min-width: 250px;
-  background: #fff;
   border-radius: 16px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  background: #fff;
   overflow: hidden;
 }
 
-/* DESKRIPSI DI KANAN */
-.product-detail .product-info {
-  flex: 1 1 350px;
-  max-width: 420px;
+/* BAGIAN INFO DI KANAN */
+.product-info {
+  flex: 0 0 400px;
   background: #fff;
   padding: 25px 30px;
   border-radius: 16px;
-  color: #000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .product-info h1 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #111;
 }
 
 .product-info .price {
@@ -411,15 +408,15 @@ footer {
 }
 
 .product-info .size {
+  color: #444;
   font-weight: 500;
   margin-bottom: 10px;
-  color: #444;
 }
 
 .product-info .desc {
-  margin-bottom: 15px;
   color: #333;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .wa-btn {
@@ -437,7 +434,7 @@ footer {
   background: #1ebe5b;
 }
 
-/* === SLIDER PRODUK === */
+/* === SLIDER === */
 .slides {
   display: flex;
   width: 200%;
@@ -456,7 +453,6 @@ footer {
 
 .slide img {
   width: 100%;
-  height: auto;
   display: block;
   object-fit: cover;
   border-radius: 16px;
@@ -469,18 +465,17 @@ footer {
   width: 100%;
   text-align: center;
   color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  text-shadow: 0 2px 5px #000;
   background: #000;
+  font-weight: 600;
   padding: 6px 0;
+  font-size: 1rem;
   border-radius: 0 0 16px 16px;
 }
 
 .navigation-manual {
   position: absolute;
-  width: 100%;
   bottom: 10px;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -499,7 +494,6 @@ footer {
   background: #fff;
 }
 
-/* Efek perpindahan slide */
 #img-1:checked ~ .slides {
   transform: translateX(0);
 }
@@ -507,30 +501,36 @@ footer {
   transform: translateX(-50%);
 }
 
-/* === SUPAYA TETAP RAPI DI LAYAR KECIL === */
-@media (max-width: 600px) {
-  .product-detail {
-    gap: 20px;
-    padding: 30px 10px;
+/* === RESPONSIF: SKALA UNTUK HP === */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
   }
 
-  .product-detail .slider,
-  .product-detail .product-info {
-    max-width: 48%;
-    min-width: 160px;
+  .product-detail {
+    transform: scale(0.85); /* perkecil tampilan biar pas */
+    transform-origin: top center;
+    overflow-x: visible;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .slider {
+    max-width: 280px;
+  }
+
+  .product-info {
+    max-width: 320px;
+    padding: 15px 20px;
   }
 
   .product-info h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .product-info .desc {
     font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .slide .caption {
-    font-size: 0.8rem;
   }
 }
+
 
