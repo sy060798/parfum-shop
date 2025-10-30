@@ -367,25 +367,68 @@ footer {
   flex-direction: row; /* gambar kiri, teks kanan */
 }
 
-.product-image {
-  flex: 1 1 40%;
-  display: flex;
-  justify-content: center;
-}
-
-.product-image img {
+/* === SLIDER PRODUK === */
+.slider {
   width: 100%;
-  max-width: 350px;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+.slides {
+  display: flex;
+  width: 200%;
+  transition: transform 0.6s ease;
 }
 
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* tombol manual (bawah foto) */
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.manual-btn {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.manual-btn:hover {
+  background: #fff;
+}
+
+/* Efek slide */
+#img-1:checked ~ .first {
+  margin-left: 0;
+}
+#img-2:checked ~ .first {
+  margin-left: -50%;
+}
+
+/* === BAGIAN TEKS PRODUK === */
 .product-info {
   flex: 1 1 50%;
   max-width: 480px;
@@ -441,8 +484,8 @@ footer {
     gap: 2rem;
   }
 
-  .product-image img {
-    max-width: 250px;
+  .slider {
+    max-width: 280px;
     margin: 0 auto;
   }
 
