@@ -91,9 +91,7 @@ console.log("Website parfum aktif ✅");
   startAuto();
 })();
 
-// ===== NAV MENU (RESPONSIF) =====
-const toggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('nav-menu');
+// ===== NAV MENU (RESPONSIF) =====  //
 
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
