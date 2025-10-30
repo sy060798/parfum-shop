@@ -1,369 +1,190 @@
 /* === RESET DASAR === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Hilangkan margin default semua elemen */
+  padding: 0; /* Hilangkan padding default semua elemen */
+  box-sizing: border-box; /* Supaya ukuran elemen lebih konsisten */
 }
 
-body { font-family: 'Poppins', sans-serif; 
-  background: #1a1a1a; 
-  margin: 0; 
-  color: #333;
-  }
+body {
+  font-family: 'Poppins', sans-serif; /* Gunakan font modern */
+  background: #1a1a1a; /* Warna latar belakang utama hitam */
+  color: #333; /* Warna teks default abu gelap */
+}
 
 /* === HEADER === */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 48px;
-  background: linear-gradient(135deg, #d946ef, #9333ea);
-  color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  position: sticky;
+  display: flex; /* Atur elemen header sejajar kiri-kanan */
+  align-items: center; /* Vertikal rata tengah */
+  justify-content: space-between; /* Spasi antara logo & tombol */
+  padding: 16px 48px; /* Spasi dalam header */
+  background: linear-gradient(135deg, #d946ef, #9333ea); /* Gradasi ungu elegan */
+  color: #fff; /* Teks putih */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Bayangan lembut */
+  position: sticky; /* Tetap di atas saat di-scroll */
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /* Supaya tidak tertimpa elemen lain */
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 24px;
-}
-
-nav a {
-  text-decoration: none;
+  font-size: 1.5rem; /* Ukuran teks logo */
+  font-weight: 600; /* Tebal teks logo */
   color: #fff;
-  font-weight: 500;
-  transition: color 0.2s ease-in-out;
+  text-decoration: none; /* Hilangkan garis bawah */
 }
 
-nav a:hover {
-  color: #fde68a;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Tombol "Mulai" */
+/* === TOMBOL UTAMA === */
 .btn-primary {
-  background-color: #0ea5a9;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.25s ease-in-out;
+  background-color: #0ea5a9; /* Warna biru toska */
+  color: #fff; /* Teks putih */
+  padding: 10px 18px; /* Spasi dalam tombol */
+  border-radius: 8px; /* Sudut melengkung */
+  font-weight: 600; /* Teks agak tebal */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: all 0.25s ease-in-out; /* Efek animasi halus */
 }
 
 .btn-primary:hover {
-  background-color: #0891b2;
-  transform: translateY(-2px);
+  background-color: #0891b2; /* Warna sedikit lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek tombol sedikit naik */
 }
 
-/* === GALERI PRODUK === */
+/* === GALERI PRODUK (HALAMAN UTAMA) === */
 .gallery {
-  padding: 60px 40px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #fff; /* putih bersih */
-  color: #000;      /* tulisan hitam */
+  width: 100%; /* Gunakan seluruh lebar layar */
+  padding: 60px 5%; /* Spasi kiri-kanan proporsional */
+  text-align: center; /* Judul rata tengah */
+  background: #fff; /* Latar putih untuk kontras */
+  color: #000; /* Warna teks hitam */
 }
 
-.judul-parfum {
-  font-family: 'Special Elite', cursive;
-  font-size: 36px;
-  color: #000; /* hitam */
-  margin-bottom: 40px;
-  text-align: center;
-}
-
+/* === GRID PRODUK 2 KOLOM RATA KANAN-KIRI === */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  justify-content: center;
-  align-items: stretch;
+  display: grid; /* Gunakan sistem grid */
+  grid-template-columns: repeat(2, 1fr); /* Dua produk per baris */
+  gap: 40px; /* Jarak antar produk */
+  justify-content: stretch; /* Isi penuh kiri-kanan */
+  align-items: stretch; /* Tinggi tiap kolom menyesuaikan */
 }
 
+/* === KARTU PRODUK === */
 .product-card {
-  background: #f9f9f9; /* sedikit abu biar beda dari putih utama */
-  color: #000;         /* tulisan hitam */
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff; /* Latar belakang putih */
+  border-radius: 10px; /* Sudut melengkung */
+  padding: 20px; /* Spasi dalam kartu */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Bayangan lembut */
+  transition: transform 0.3s ease, box-shadow 0.2s ease; /* Efek animasi halus */
+  display: flex; /* Tata letak fleksibel */
+  flex-direction: column; /* Elemen tersusun vertikal */
+  justify-content: space-between; /* Jarak antara isi atas-bawah */
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px); /* Naik sedikit saat di-hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan lebih tegas */
 }
 
 .product-card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr; /* 1 kolom di layar kecil banget */
-  }
-}
-
-
-/* === PRODUK CARD === */
-.product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-/* Efek gambar produk */
-.product-card img {
-  border-radius: 10px;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  width: 100%; /* Gambar isi penuh kartu */
+  height: 220px; /* Tinggi gambar tetap */
+  border-radius: 10px; /* Sudut gambar melengkung */
+  object-fit: cover; /* Potong gambar agar proporsional */
+  margin-bottom: 15px; /* Jarak ke teks bawah */
+  transition: transform 0.6s ease, box-shadow 0.3s ease; /* Efek animasi */
 }
 
 .product-card:hover img {
-  transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.08) rotate(1deg); /* Efek zoom & sedikit miring */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Tambah bayangan saat hover */
 }
 
 .price {
-  font-weight: 600;
-  color: #9333ea;
+  font-weight: 600; /* Harga lebih tebal */
+  color: #9333ea; /* Warna ungu */
   margin: 8px 0;
 }
 
+/* === TOMBOL PESAN (WHATSAPP) === */
 .wa-btn {
   display: inline-block;
-  background: #25D366;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
+  background: #25D366; /* Warna khas WhatsApp */
+  color: #fff; /* Teks putih */
+  padding: 8px 12px; /* Spasi dalam tombol */
+  border-radius: 8px; /* Sudut melengkung */
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s; /* Efek halus saat hover */
 }
 
 .wa-btn:hover {
-  background: #128C7E;
+  background: #128C7E; /* Hijau lebih gelap saat hover */
 }
 
-/* === PROMO SLIDER === */
-.promo {
-  background: linear-gradient(135deg, #ecfeff, #f0fdfa);
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.promo-slider-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.promo-slider {
-  width: min(900px, 90%);
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-
-.slide {
-  display: inline-block;
-  width: 100%;
-}
-
-.slide-block {
-  background: rgba(0,0,0,0.75);
-  padding: 28px 30px;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.slide-text {
-  color: #fff;
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.slide-text strong {
-  color: #0ea5a9;
-}
-
-
-.info-list {
-  list-style: disc;        /* tetap pakai bullet (opsional) */
-  color: #fff;             /* warna teks putih */
-  font-size: 1rem;         /* ukuran normal */
-  line-height: 1.6;        /* jarak antar baris */
-  margin: 20px 0;          /* jarak atas-bawah */
-  padding-left: 20px;      /* biar bullet tidak terlalu mepet */
-}
-
-footer {
-  background-color: #000; /* hitam */
-  color: #fff;            /* teks putih */
-  text-align: center;
-  padding: 15px 0;
-}
-
-
-
-/* === PROMO FOTO / VIDEO KIRI-KANAN === */
+/* === PROMO VIDEO / FOTO === */
 .promo-products {
-  display: flex;
-  justify-content: center;   /* Tengah secara horizontal */
-  align-items: flex-start;
-  gap: 20px;                 /* Jarak antar item */
-  flex-wrap: wrap;           /* Biar rapi kalau ruang sempit */
+  display: flex; /* Susunan horizontal */
+  justify-content: center; /* Tengah secara horizontal */
+  flex-wrap: wrap; /* Baris baru otomatis bila penuh */
+  gap: 20px; /* Jarak antar item promo */
   padding: 50px 20px;
-  background: #fdfdfd;
+  background: #fdfdfd; /* Latar terang */
 }
 
 .promo-item {
-  flex: 1 1 45%;             /* Biar muat 2 item per baris */
+  flex: 1 1 45%; /* Lebar fleksibel, minimal 45% */
   max-width: 400px;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* Gambar tidak keluar batas */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background: #fff;
   transition: transform 0.3s ease;
-  background: white;
 }
 
 .promo-item:hover {
-  transform: scale(1.04);
+  transform: scale(1.04); /* Sedikit membesar saat hover */
 }
 
 .promo-item img,
 .promo-item video {
-  width: 100%;            /* menyesuaikan lebar gambar mengikuti lebar card */
-  height: 200px;          /* ukuran gambar dan vidio */
-  object-fit: cover;
-  display: block;
-  border-radius: 12px 12px 0 0;
+  width: 100%; /* Isi penuh */
+  height: 200px;
+  object-fit: cover; /* Potong agar proporsional */
+  border-radius: 12px 12px 0 0; /* Sudut atas melengkung */
 }
 
 .promo-caption {
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Latar gelap transparan */
   color: #fff;
   font-weight: 600;
   text-align: center;
   font-size: 0.9rem;
-  border-radius: 0 0 12px 12px;
 }
 
-/* RESPONSIVE — biar di HP tetap dua kolom sejajar */
-@media (max-width: 768px) {
-  .promo-products {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .promo-item {
-    flex: 1 1 48%;           /* dua kolom di HP */
-    max-width: 48%;
-  }
-
-  .promo-item img,
-  .promo-item video {
-    height: 160px;           /* sedikit lebih pendek biar pas di layar kecil */
-  }
-}
-
-/* Kalau layar super kecil (<480px) baru dibuat satu kolom */
-@media (max-width: 480px) {
-  .promo-item {
-    flex: 1 1 100%;
-    max-width: 90%;
-  }
-}
-
-/* Garis pemisah */
-
-.pemisah-section {
-  border: none;
-  height: 2px;                 /* ketebalan garis */
-  background-color: #ddd;      /* warna garis abu lembut */
-  margin: 40px auto;           /* jarak atas bawah */
-  width: 80%;                  /* panjang garis */
-  border-radius: 4px;          /* ujung sedikit melengkung */
-}
-
-
-
-/* === SOSIAL MEDIA LINKS === */
+/* === SOSIAL MEDIA === */
 .social-links {
   display: flex;
-  justify-content: center;  /* posisi di tengah */
+  justify-content: center;
   align-items: center;
-  gap: 20px;                /* jarak antar ikon */
-  margin: 30px 0;           /* jarak atas dan bawah */
+  gap: 20px; /* Jarak antar ikon */
+  margin: 30px 0;
 }
 
 .social-links img {
-  width: 40px;              /* ubah ukuran ikon (default 40px) */
+  width: 40px;
   height: 40px;
-  border-radius: 8px;       /* bikin sudut agak melengkung */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi */
 }
 
 .social-links img:hover {
-  transform: scale(1.2);    /* efek zoom saat di-hover */
+  transform: scale(1.2); /* Zoom saat hover */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-
-
-/* === BAGIAN KHUSUS DETAIL PRODUK (ROSE) === */
-
+/* === DETAIL PRODUK (HALAMAN PRODUK) === */
 .detail-produk {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 60px 20px;
   background: #fff;
@@ -371,9 +192,8 @@ footer {
 }
 
 .detail-img {
-  width: 100%;
   max-width: 400px;
-  height: auto;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   margin-bottom: 20px;
@@ -386,42 +206,101 @@ footer {
 
 .detail-info h2 {
   font-size: 2rem;
+  color: #6b4c3b; /* Warna khas untuk judul parfum */
   margin-bottom: 10px;
-  color: #6b4c3b;
 }
 
-.detail-info p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #000;
+/* === FOOTER === */
+footer {
+  background-color: #000; /* Latar hitam */
+  color: #fff; /* Teks putih */
+  text-align: center; /* Tengah */
+  padding: 15px 0; /* Spasi dalam */
 }
 
-.wa-btn {
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.wa-btn:hover {
-  transform: scale(1.05);
-  background-color: #128C7E;
-}
-
-/* RESPONSIVE KHUSUS DETAIL PRODUK */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom di tablet */
+    gap: 20px;
+  }
+
+  .promo-item {
+    flex: 1 1 48%; /* Lebar fleksibel di tablet */
+  }
+
   .detail-img {
     max-width: 300px;
   }
 }
 
+/* === RESPONSIVE UNTUK HP === */
 @media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tetap dua kolom di HP */
+    gap: 16px; /* Jarak antar produk lebih kecil agar muat */
+  }
+
+  .product-card img {
+    height: 180px; /* Sesuaikan tinggi gambar untuk layar kecil */
+  }
+
+  .promo-item {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
   .detail-img {
     max-width: 90%;
   }
+}
+
+/* === DAFTAR INFO === */
+.info-list {
+  list-style: disc;
+  color: #ffffff;            /* Putih murni */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 25px 0;
+  padding-left: 25px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4); /* efek cahaya halus */
+}
+}
+/* === TEKS BERGERAK === */
+
+.judul-parfum {
+  font-size: 2rem;              /* Ukuran teks besar untuk kesan kuat */
+  font-weight: 700;             /* Tebal agar terlihat gagah */
+  color: #000;                  /* Warna dasar hitam elegan */
+  text-align: center;           /* Rata tengah agar simetris */
+  margin-bottom: 40px;          /* Jarak bawah agar tidak menempel pada konten */
+  letter-spacing: 2px;          /* Jarak antar huruf sedikit renggang untuk kesan modern */
+  text-transform: uppercase;    /* Huruf kapital semua agar tampak tegas */
+  position: relative;           /* Untuk animasi dan efek tambahan */
+  overflow: hidden;             /* Sembunyikan bagian teks yang keluar area */
+}
+
+/* ==== EFEK GRADASI BERGERAK ==== */
+.moving-text {
+  background: linear-gradient(90deg, #000, #5b21b6, #000); /* Gradasi hitam ke ungu */
+  background-size: 200%;              /* Perbesar area gradasi agar bisa bergerak */
+  -webkit-background-clip: text;      /* Batasi warna gradasi hanya di area teks */
+  -webkit-text-fill-color: transparent; /* Jadikan isi teks transparan untuk efek gradasi */
+  animation: shineMove 6s ease-in-out infinite; /* Animasi lembut bolak-balik tanpa henti */
+  text-shadow: 0 0 10px rgba(0,0,0,0.1); /* Bayangan lembut untuk kesan mewah */
+}
+
+/* ==== ANIMASI GERAK HALUS ==== */
+@keyframes shineMove {
+  0% {
+    background-position: 200% center; /* Mulai dari kanan */
+  }
+  50% {
+    background-position: 0% center;   /* Bergerak ke kiri */
+  }
+  100% {
+    background-position: 200% center; /* Kembali ke kanan (loop) */
+  }
+}
+
 }
