@@ -9,6 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #1a1a1a;
   color: #333;
+  line-height: 1.6;
 }
 
 /* === HEADER === */
@@ -111,7 +112,7 @@ header {
   padding: 8px 12px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .wa-btn:hover {
@@ -180,103 +181,10 @@ header {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* === DETAIL PRODUK === */
-.detail-produk {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
-  color: #000;
-}
-
-.detail-img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-}
-
-.detail-info {
-  max-width: 500px;
-  padding: 0 15px;
-}
-
-.detail-info h2 {
-  font-size: 2rem;
-  color: #6b4c3b;
-  margin-bottom: 10px;
-}
-
-/* === FOOTER === */
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-}
-
-/* === RESPONSIVE TABLET === */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .promo-item {
-    flex: 1 1 48%;
-  }
-
-  .detail-img {
-    max-width: 300px;
-  }
-}
-
-/* === RESPONSIVE HP === */
-@media (max-width: 480px) {
-  .gallery {
-    padding: 40px 3%;
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    justify-items: center;
-    align-items: start;
-  }
-
-  .product-card {
-    width: 100%;
-    max-width: 170px;
-    padding: 10px;
-  }
-
-  .product-card img {
-    height: 160px;
-    object-fit: cover;
-  }
-
-  .product-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .product-card p {
-    font-size: 0.8rem;
-  }
-
-  .wa-btn {
-    font-size: 0.8rem;
-    padding: 6px 8px;
-  }
-}
-
 /* === DAFTAR INFO === */
 .info-list {
   list-style: disc;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.05rem;
   line-height: 1.7;
   margin: 25px 0;
@@ -307,7 +215,6 @@ footer {
   text-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* ==== ANIMASI GERAK HALUS ==== */
 @keyframes shineMove {
   0% {
     background-position: 200% center;
@@ -319,81 +226,129 @@ footer {
     background-position: 200% center;
   }
 }
-/* === DETAIL PRODUK 2 KOLOM === */
+
+/* === DETAIL PRODUK === */
+.detail-produk,
 .detail-produk-2col {
+  background: #fff;
+  color: #000;
+  padding: 60px 20px;
   display: flex;
-  flex-wrap: wrap; /* Biar responsif */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  padding: 60px 20px;
-  background: #fff;
-  color: #000;
 }
 
-.detail-produk-2col .detail-img {
-  flex: 1 1 40%; /* Gambar di kiri, minimal 40% */
+.detail-img {
   max-width: 400px;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
 }
 
-.detail-produk-2col .detail-info {
-  flex: 1 1 50%; /* Info di kanan, minimal 50% */
+.detail-info {
   max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.detail-produk-2col .detail-info h2 {
+.detail-info h2 {
   font-size: 2rem;
   color: #6b4c3b;
-  margin-bottom: 5px;
 }
 
-.detail-produk-2col .detail-info .price {
+.detail-info .price {
   font-size: 1.5rem;
   color: #9333ea;
   font-weight: 700;
 }
 
-.detail-produk-2col .detail-info .size {
+.detail-info .size {
   font-size: 1rem;
   color: #333;
   font-weight: 500;
 }
 
-.detail-produk-2col .detail-info .description {
+.detail-info .description {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
 }
 
-/* Tombol pesan WhatsApp khusus di info */
-.detail-produk-2col .detail-info .wa-btn {
-  align-self: start;
+/* Tombol pesan WhatsApp khusus di detail produk */
+.detail-info .wa-btn {
+  align-self: flex-start;
   margin-top: 15px;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
 }
 
 /* === RESPONSIVE TABLET === */
 @media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .detail-produk,
   .detail-produk-2col {
     flex-direction: column;
     align-items: center;
   }
 
-  .detail-produk-2col .detail-img,
-  .detail-produk-2col .detail-info {
-    flex: 1 1 100%;
+  .detail-img,
+  .detail-info {
     max-width: 90%;
   }
 
-  .detail-produk-2col .detail-info {
+  .detail-info {
     text-align: center;
   }
 
-  .detail-produk-2col .detail-info .wa-btn {
+  .detail-info .wa-btn {
     margin: 20px auto 0 auto;
+  }
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 40px 3%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .product-card {
+    max-width: 170px;
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .product-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .product-card p {
+    font-size: 0.8rem;
+  }
+
+  .wa-btn {
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
 }
