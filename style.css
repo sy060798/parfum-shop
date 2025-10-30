@@ -357,79 +357,99 @@ footer {
 /* ==== DETAIL PRODUK (halaman kedua) ==== */
 .product-detail {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 40px 10%;
-  flex-wrap: wrap;
-  background: #fff;
+  gap: 3rem;
+  padding: 60px 10%;
+  background: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  flex-direction: row; /* pastikan gambar di kiri, teks di kanan */
+}
+
+.product-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
 }
 
 .product-image img {
-  width: 320px;
+  width: 100%;
+  max-width: 360px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 .product-info {
-  max-width: 500px;
+  flex: 1 1 50%;
+  max-width: 480px;
 }
 
 .product-info h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 10px;
   color: #333;
 }
 
 .product-info .price {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #e91e63;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .product-info .size {
   font-size: 1rem;
-  color: #777;
-  margin-bottom: 15px;
+  color: #666;
+  margin-bottom: 16px;
 }
 
 .product-info .desc {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .wa-btn {
   display: inline-block;
   background: #25d366;
-  color: white;
-  padding: 10px 20px;
+  color: #fff;
+  padding: 12px 22px;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .wa-btn:hover {
   background: #1da851;
+  transform: translateY(-2px);
 }
 
-/* Responsif di HP */
+/* Responsif di Tablet dan HP */
 @media (max-width: 768px) {
   .product-detail {
-    flex-direction: column;
+    flex-direction: column; /* ubah jadi vertikal di HP */
     text-align: center;
+    padding: 40px 5%;
   }
 
   .product-image img {
-    width: 100%;
     max-width: 300px;
+    margin: 0 auto;
   }
 
   .product-info {
     max-width: 100%;
+  }
+
+  .wa-btn {
+    margin-top: 10px;
   }
 }
