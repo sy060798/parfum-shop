@@ -367,12 +367,12 @@ footer {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 30px; /* jarak antara gambar dan teks */
+  gap: 50px; /* jarak antara gambar dan teks */
   padding: 40px 20px;
   background: #fff; /* latar putih */
   color: #000; /* teks hitam */
   border-radius: 20px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 /* === SLIDER PRODUK === */
@@ -382,7 +382,7 @@ footer {
   max-width: 350px;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
   background: #fff;
 }
 
@@ -423,8 +423,8 @@ footer {
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  text-shadow: 0 2px 5px #000; /* hitam pekat */
-  background: #000; /* overlay caption hitam solid */
+  text-shadow: 0 2px 5px #000;
+  background: #000;
   padding: 6px 0;
   border-radius: 0 0 16px 16px;
 }
@@ -464,10 +464,11 @@ footer {
 .product-info {
   max-width: 400px;
   background: #fff;
-  padding: 20px 25px;
+  padding: 25px 30px;
   border-radius: 16px;
   color: #000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
 }
 
 .product-info h1 {
@@ -490,9 +491,9 @@ footer {
 }
 
 .product-info .desc {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .wa-btn {
@@ -516,6 +517,7 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 25px; /* jarak antara gambar dan teks di HP */
   }
 
   .slider {
