@@ -1,3 +1,13 @@
+---
+---
+
+/* mulai CSS di bawah ini */
+.product-detail {
+  display: flex;
+  ...
+}
+
+
 /* === RESET DASAR === */
 * {
   margin: 0;
