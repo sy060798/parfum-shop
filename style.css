@@ -394,7 +394,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* === SLIDER (BULAT & KECIL) === */
+/* ================= SLIDER (BULAT & KECIL) ================= */
 .slider {
   position: relative;
   flex: 0 0 250px;
@@ -404,68 +404,44 @@ body {
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  margin: 0;               /* pusatkan lewat container, bukan body transform */
-  padding: 12px;           /* beri ruang sehingga lingkaran tidak menempel tepi layar */
+  margin: 0;
+  padding: 12px;
 }
 
-.slides {
-  display: flex;
-  width: 200%;
-  transition: transform 0.6s ease;
+/* ================= RESPONSIVE SLIDER ================= */
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column; /* slider di atas info produk */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .slider {
+    width: 60%;          /* lebih kecil dari layar */
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 10px; /* beri jarak dari product-info */
+    flex: 0 0 auto;
+  }
+
+  .product-info {
+    width: 90%;          /* menyesuaikan layar */
+    max-width: 500px;
+  }
 }
 
-.slides input { display: none; }
+@media (max-width: 480px) {
+  .slider {
+    width: 80%;          /* slider lebih lebar supaya proporsional */
+    max-width: 250px;
+  }
 
-.slide {
-  width: 50%;
-  flex-shrink: 0;
-  position: relative;
+  .product-info {
+    width: 95%;
+    padding: 15px;
+  }
 }
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
-
-/* caption & bullets */
-.slide .caption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 0 0 50% 50%;
-}
-
-.navigation-manual {
-  position: absolute;
-  width: 100%;
-  bottom: 12px;
-  display: none;
-  justify-content: center;
-  gap: 8px;
-}
-
-.manual-btn {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.manual-btn:hover { background: #fff; }
-
-/* kontrol slider (tetap) */
-#img-1:checked ~ .slides { transform: translateX(0); }
-#img-2:checked ~ .slides { transform: translateX(-50%); }
 
 /* === TEKS PRODUK === */
 .product-info {
