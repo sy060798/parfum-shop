@@ -373,6 +373,8 @@ body {
   background: #fafafa;
   color: #333;
   line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden; /* penting supaya tidak muncul scroll horizontal */
 }
 
 /* === DETAIL PRODUK === */
@@ -382,12 +384,15 @@ body {
   justify-content: center;
   gap: 40px;
   padding: 40px 20px;
-  background: #fff;
+  background: transparent; /* biarkan bg parent */
   color: #000;
   border-radius: 20px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  /* beri max-width supaya tidak melebar berlebihan di layar besar */
+  max-width: 1100px;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+  flex-wrap: wrap;         /* => penting: biar turun ke baris baru di layar kecil */
+  overflow: visible;       /* jangan clipping anak */
   scroll-behavior: smooth;
 }
 
@@ -401,7 +406,8 @@ body {
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  margin: auto;
+  margin: 0;               /* pusatkan lewat container, bukan body transform */
+  padding: 12px;           /* beri ruang sehingga lingkaran tidak menempel tepi layar */
 }
 
 .slides {
@@ -410,9 +416,7 @@ body {
   transition: transform 0.6s ease;
 }
 
-.slides input {
-  display: none;
-}
+.slides input { display: none; }
 
 .slide {
   width: 50%;
@@ -425,8 +429,10 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  display: block;
 }
 
+/* caption & bullets */
 .slide .caption {
   position: absolute;
   bottom: 0;
@@ -443,7 +449,7 @@ body {
 .navigation-manual {
   position: absolute;
   width: 100%;
-  bottom: 10px;
+  bottom: 12px;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -457,25 +463,21 @@ body {
   cursor: pointer;
   transition: background 0.3s;
 }
+.manual-btn:hover { background: #fff; }
 
-.manual-btn:hover {
-  background: #fff;
-}
-
-#img-1:checked ~ .slides {
-  transform: translateX(0);
-}
-#img-2:checked ~ .slides {
-  transform: translateX(-50%);
-}
+/* kontrol slider (tetap) */
+#img-1:checked ~ .slides { transform: translateX(0); }
+#img-2:checked ~ .slides { transform: translateX(-50%); }
 
 /* === TEKS PRODUK === */
 .product-info {
-  flex: 0 0 350px;
+  flex: 0 0 380px;
   background: #fff;
   padding: 25px 30px;
   border-radius: 18px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 620px;
 }
 
 .product-info h1 {
@@ -515,48 +517,51 @@ body {
   font-weight: 600;
   transition: 0.3s;
 }
-
-.wa-btn:hover {
-  background: #1ebe5b;
-}
+.wa-btn:hover { background: #1ebe5b; }
 
 /* === RESPONSIF: PRESISI UNTUK HP === */
 @media (max-width: 768px) {
+
   body {
-    /* hapus transform dan width */
+    /* jangan pakai transform/scale atau width > 100% */
     width: 100%;
     overflow-x: hidden;
   }
 
+  /* tata ulang jadi kolom di HP (gambar di atas, info di bawah) */
   .product-detail {
-    flex-wrap: wrap; /* agar slider dan info bisa turun */
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 20px 12px;
   }
 
   .slider {
-    flex: 1 1 200px;
-    max-width: 100%;
+    flex: 0 0 200px;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
   }
 
   .product-info {
-    flex: 1 1 250px;
-    max-width: 100%;
-    padding: 20px;
+    flex: 1 1 100%;
+    max-width: 760px;
+    padding: 18px;
+    border-radius: 14px;
   }
 
-  .product-info h1 {
-    font-size: 1.3rem;
-  }
-
-  .product-info .desc {
-    font-size: 0.9rem;
-  }
-
-  .wa-btn {
-    padding: 9px 18px;
-    font-size: 0.9rem;
-  }
+  .product-info h1 { font-size: 1.3rem; }
+  .product-info .desc { font-size: 0.92rem; }
+  .wa-btn { padding: 9px 18px; font-size: 0.9rem; }
 }
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .slider { flex: 0 0 170px; max-width: 170px; }
+  .product-info { padding: 14px; }
+  .product-info h1 { font-size: 1.15rem; }
+  .product-info .price { font-size: 1.05rem; }
+}
+
 
