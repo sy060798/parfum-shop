@@ -191,7 +191,7 @@ header {
 /* === DAFTAR INFO === */
 .info-list {
   list-style: disc;
-  color: #fff;
+  color: #000;
   font-size: 1.05rem;
   line-height: 1.7;
   margin: 25px 0;
