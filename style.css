@@ -236,25 +236,40 @@ footer {
 
 /* === RESPONSIVE UNTUK HP === */
 @media (max-width: 480px) {
+  .gallery {
+    padding: 40px 3%; /* Kurangi padding agar ruang cukup */
+  }
+
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* Tetap dua kolom di HP */
-    gap: 16px; /* Jarak antar produk lebih kecil agar muat */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Pastikan 2 kolom */
+    gap: 12px; /* Jarak antar produk lebih kecil agar pas di layar */
+    justify-content: center;
+    align-items: start;
+  }
+
+  .product-card {
+    padding: 10px; /* Kurangi spasi agar dua muat sejajar */
   }
 
   .product-card img {
-    height: 180px; /* Sesuaikan tinggi gambar untuk layar kecil */
+    height: 160px; /* Tinggi gambar proporsional di HP */
+    object-fit: cover;
   }
 
-  .promo-item {
-    flex: 1 1 100%;
-    max-width: 90%;
+  .product-card h3 {
+    font-size: 0.9rem;
   }
 
-  .detail-img {
-    max-width: 90%;
+  .product-card p {
+    font-size: 0.8rem;
+  }
+
+  .wa-btn {
+    font-size: 0.8rem;
+    padding: 6px 8px;
   }
 }
-
 /* === DAFTAR INFO === */
 .info-list {
   list-style: disc;
