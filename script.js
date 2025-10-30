@@ -107,3 +107,9 @@ if (toggle && nav) {
     });
   });
 }
+let counter = 1;
+setInterval(() => {
+  document.getElementById('img-' + counter).checked = true;
+  counter++;
+  if (counter > 2) counter = 1;
+}, 3000);
