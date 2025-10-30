@@ -364,32 +364,83 @@ footer {
 /* === DETAIL PRODUK (HALAMAN KEDUA) === */
 .product-detail {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 50px; /* jarak antara gambar dan teks */
-  padding: 40px 20px;
-  background: #fff; /* latar putih */
-  color: #000; /* teks hitam */
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 20px;
+  background: #fff;
+  color: #000;
   border-radius: 20px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* === SLIDER PRODUK === */
-.slider {
-  position: relative;
-  width: 100%;
+/* SLIDER DI KIRI */
+.product-detail .slider {
+  flex: 1 1 350px;
   max-width: 350px;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  min-width: 250px;
   background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  overflow: hidden;
 }
 
-/* Container untuk semua slide */
+/* DESKRIPSI DI KANAN */
+.product-detail .product-info {
+  flex: 1 1 350px;
+  max-width: 420px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.product-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.product-info .price {
+  color: #7a00ff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.product-info .size {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.product-info .desc {
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.wa-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.wa-btn:hover {
+  background: #1ebe5b;
+}
+
+/* === SLIDER PRODUK === */
 .slides {
   display: flex;
-  width: 200%; /* 2 slide */
+  width: 200%;
   transition: transform 0.6s ease;
 }
 
@@ -397,14 +448,12 @@ footer {
   display: none;
 }
 
-/* Setiap slide */
 .slide {
   width: 50%;
   flex-shrink: 0;
   position: relative;
 }
 
-/* Gambar di dalam slide */
 .slide img {
   width: 100%;
   height: auto;
@@ -413,7 +462,6 @@ footer {
   border-radius: 16px;
 }
 
-/* Teks di atas gambar */
 .slide .caption {
   position: absolute;
   bottom: 12px;
@@ -429,7 +477,6 @@ footer {
   border-radius: 0 0 16px 16px;
 }
 
-/* Tombol manual (bulatan navigasi) */
 .navigation-manual {
   position: absolute;
   width: 100%;
@@ -460,77 +507,30 @@ footer {
   transform: translateX(-50%);
 }
 
-/* === BAGIAN TEKS PRODUK === */
-.product-info {
-  max-width: 400px;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 16px;
-  color: #000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  line-height: 1.6;
-}
-
-.product-info h1 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.product-info .price {
-  color: #7a00ff; /* ungu lembut */
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.product-info .size {
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-.product-info .desc {
-  margin-bottom: 20px;
-  color: #333;
-  line-height: 1.7;
-}
-
-.wa-btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.wa-btn:hover {
-  background: #1ebe5b;
-}
-
-/* === RESPONSIF UNTUK HP === */
-@media (max-width: 768px) {
+/* === SUPAYA TETAP RAPI DI LAYAR KECIL === */
+@media (max-width: 600px) {
   .product-detail {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px; /* jarak antara gambar dan teks di HP */
+    gap: 20px;
+    padding: 30px 10px;
   }
 
-  .slider {
-    max-width: 280px;
+  .product-detail .slider,
+  .product-detail .product-info {
+    max-width: 48%;
+    min-width: 160px;
+  }
+
+  .product-info h1 {
+    font-size: 1.3rem;
+  }
+
+  .product-info .desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
   .slide .caption {
-    font-size: 0.9rem;
-  }
-
-  .product-info {
-    max-width: 100%;
-    box-shadow: none;
-    padding: 15px;
+    font-size: 0.8rem;
   }
 }
+
