@@ -361,80 +361,32 @@ footer {
 }
 
 
-/* === DETAIL PRODUK (TAMPILAN DESKTOP DI HP) === */
+/* === DETAIL PRODUK === */
 .product-detail {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 50px 20px;
+  padding: 40px 20px;
   background: #fff;
   color: #000;
   border-radius: 20px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
   flex-wrap: nowrap;
-  overflow-x: auto; /* biar bisa digeser kalau layar kecil */
-}
-
-/* SLIDER PRODUK DI KIRI */
-.slider {
-  flex: 0 0 350px;
-  max-width: 350px;
-  border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  background: #fff;
-  overflow: hidden;
-}
-
-/* BAGIAN INFO DI KANAN */
-.product-info {
-  flex: 0 0 400px;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.product-info h1 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.product-info .price {
-  color: #7a00ff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.product-info .size {
-  color: #444;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.product-info .desc {
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.wa-btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.wa-btn:hover {
-  background: #1ebe5b;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 /* === SLIDER === */
+.slider {
+  flex: 0 0 340px;
+  max-width: 340px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
 .slides {
   display: flex;
   width: 200%;
@@ -453,37 +405,36 @@ footer {
 
 .slide img {
   width: 100%;
-  display: block;
+  height: auto;
   object-fit: cover;
-  border-radius: 16px;
+  display: block;
 }
 
 .slide .caption {
   position: absolute;
-  bottom: 12px;
-  left: 0;
+  bottom: 0;
   width: 100%;
-  text-align: center;
-  color: #fff;
   background: #000;
+  color: #fff;
   font-weight: 600;
-  padding: 6px 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 5px 0;
   border-radius: 0 0 16px 16px;
 }
 
 .navigation-manual {
   position: absolute;
-  bottom: 10px;
   width: 100%;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   gap: 8px;
 }
 
 .manual-btn {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -501,27 +452,74 @@ footer {
   transform: translateX(-50%);
 }
 
-/* === RESPONSIF: SKALA UNTUK HP === */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
+/* === TEKS PRODUK === */
+.product-info {
+  flex: 0 0 350px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
 
+.product-info h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.product-info .price {
+  color: #7a00ff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.product-info .size {
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.product-info .desc {
+  color: #333;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.wa-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.wa-btn:hover {
+  background: #1ebe5b;
+}
+
+/* === RESPONSIF: PRESISI UNTUK HP === */
+@media (max-width: 768px) {
   .product-detail {
-    transform: scale(0.85); /* perkecil tampilan biar pas */
+    transform: scale(0.9);
     transform-origin: top center;
-    overflow-x: visible;
-    gap: 20px;
     padding: 20px 10px;
+    gap: 25px;
   }
 
   .slider {
     max-width: 280px;
+    flex: 0 0 280px;
   }
 
   .product-info {
-    max-width: 320px;
-    padding: 15px 20px;
+    max-width: 300px;
+    padding: 20px;
   }
 
   .product-info h1 {
@@ -529,6 +527,11 @@ footer {
   }
 
   .product-info .desc {
+    font-size: 0.9rem;
+  }
+
+  .wa-btn {
+    padding: 9px 18px;
     font-size: 0.9rem;
   }
 }
