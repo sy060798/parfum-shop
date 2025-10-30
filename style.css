@@ -352,3 +352,84 @@ footer {
     padding: 6px 8px;
   }
 }
+
+
+/* ==== DETAIL PRODUK (halaman kedua) ==== */
+.product-detail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 40px 10%;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.product-image img {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-info {
+  max-width: 500px;
+}
+
+.product-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-info .price {
+  font-size: 1.3rem;
+  color: #e91e63;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.product-info .size {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.product-info .desc {
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.wa-btn {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.wa-btn:hover {
+  background: #1da851;
+}
+
+/* Responsif di HP */
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .product-info {
+    max-width: 100%;
+  }
+}
