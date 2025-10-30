@@ -361,7 +361,21 @@ footer {
 }
 
 
-/* === SLIDER PRODUK (PERBAIKAN) === */
+/* === DETAIL PRODUK (HALAMAN KEDUA) === */
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px; /* jarak antara gambar dan teks */
+  padding: 40px 20px;
+  background: #fff; /* latar putih */
+  color: #000; /* teks hitam */
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* === SLIDER PRODUK === */
 .slider {
   position: relative;
   width: 100%;
@@ -369,10 +383,10 @@ footer {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  background: var(--slider-bg);
+  background: #fff;
 }
 
-/* --- Container untuk semua slide --- */
+/* Container untuk semua slide */
 .slides {
   display: flex;
   width: 200%; /* 2 slide */
@@ -383,14 +397,14 @@ footer {
   display: none;
 }
 
-/* --- Setiap slide --- */
+/* Setiap slide */
 .slide {
   width: 50%;
   flex-shrink: 0;
   position: relative;
 }
 
-/* --- Gambar di dalam slide --- */
+/* Gambar di dalam slide */
 .slide img {
   width: 100%;
   height: auto;
@@ -399,23 +413,23 @@ footer {
   border-radius: 16px;
 }
 
-/* --- Teks di atas gambar --- */
+/* Teks di atas gambar */
 .slide .caption {
   position: absolute;
   bottom: 12px;
   left: 0;
   width: 100%;
   text-align: center;
-  color: var(--text-color);
+  color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-  background: rgba(0,0,0,0.3);
+  text-shadow: 0 2px 5px #000; /* hitam pekat */
+  background: #000; /* overlay caption hitam solid */
   padding: 6px 0;
   border-radius: 0 0 16px 16px;
 }
 
-/* --- Tombol manual (bulatan navigasi) --- */
+/* Tombol manual (bulatan navigasi) */
 .navigation-manual {
   position: absolute;
   width: 100%;
@@ -438,7 +452,7 @@ footer {
   background: #fff;
 }
 
-/* --- Efek perpindahan slide --- */
+/* Efek perpindahan slide */
 #img-1:checked ~ .slides {
   transform: translateX(0);
 }
@@ -446,14 +460,75 @@ footer {
   transform: translateX(-50%);
 }
 
-/* === RESPONSIF === */
+/* === BAGIAN TEKS PRODUK === */
+.product-info {
+  max-width: 400px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 16px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.product-info .price {
+  color: #7a00ff; /* ungu lembut */
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.product-info .size {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.product-info .desc {
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.wa-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.wa-btn:hover {
+  background: #1ebe5b;
+}
+
+/* === RESPONSIF UNTUK HP === */
 @media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .slider {
     max-width: 280px;
   }
+
   .slide .caption {
     font-size: 0.9rem;
   }
+
+  .product-info {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 15px;
+  }
 }
-
-
