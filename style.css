@@ -518,16 +518,16 @@ body {
 .wa-btn:hover { background: #1ebe5b; }
 
 /* === RESPONSIF: PRESISI UNTUK HP === */
+/* === RESPONSIF: PRESISI UNTUK HP === */
 @media (max-width: 768px) {
-
   body {
-    /* jangan pakai transform/scale atau width > 100% */
     width: 100%;
     overflow-x: hidden;
   }
 
-  /* tata ulang jadi kolom di HP (gambar di atas, info di bawah) */
+  /* Mengatur .product-detail menjadi kolom pada tampilan HP */
   .product-detail {
+    display: flex; /* pastikan menggunakan flexbox */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -535,30 +535,67 @@ body {
     padding: 20px 12px;
   }
 
+  /* Mengatur ukuran slider agar lebih responsif */
   .slider {
-    flex: 0 0 200px;
-    max-width: 200px;
-    aspect-ratio: 1 / 1;
+    width: 100%; /* pastikan slider mengisi lebar penuh */
+    max-width: 350px; /* batasan lebar maksimum */
+    aspect-ratio: 1 / 1; /* memastikan rasio gambar tetap 1:1 */
     padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Menyesuaikan info produk agar lebih pas di layar kecil */
+  .product-info {
+    width: 100%;
+    max-width: 760px; /* batasan lebar maksimal */
+    padding: 18px;
+    border-radius: 14px;
+    background-color: #fff; /* memberi warna latar belakang */
+  }
+
+  /* Ukuran font judul produk lebih kecil untuk mobile */
+  .product-info h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  /* Deskripsi produk agar tetap terbaca nyaman */
+  .product-info .desc {
+    font-size: 0.92rem;
+  }
+
+  /* Tombol WhatsApp lebih responsif */
+  .wa-btn {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    width: 100%; /* tombol memenuhi lebar layar */
+  }
+}
+
+/* Tampilan untuk perangkat dengan lebar maksimal 380px (ponsel kecil) */
+@media (max-width: 380px) {
+  .slider {
+    width: 100%; /* slider menyesuaikan lebar */
+    max-width: 170px;
   }
 
   .product-info {
-    flex: 1 1 100%;
-    max-width: 760px;
-    padding: 18px;
-    border-radius: 14px;
+    padding: 14px;
   }
 
-  .product-info h1 { font-size: 1.3rem; }
-  .product-info .desc { font-size: 0.92rem; }
-  .wa-btn { padding: 9px 18px; font-size: 0.9rem; }
-}
+  /* Ukuran font judul produk lebih kecil */
+  .product-info h1 {
+    font-size: 1.15rem;
+  }
 
-/* Very small phones */
-@media (max-width: 380px) {
-  .slider { flex: 0 0 170px; max-width: 170px; }
-  .product-info { padding: 14px; }
-  .product-info h1 { font-size: 1.15rem; }
-  .product-info .price { font-size: 1.05rem; }
+  /* Menyesuaikan ukuran harga */
+  .product-info .price {
+    font-size: 1.05rem;
+  }
+
+  /* Tombol WhatsApp lebih kecil untuk ponsel kecil */
+  .wa-btn {
+    font-size: 0.8rem;
+  }
 }
 
