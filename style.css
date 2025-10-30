@@ -1,4 +1,11 @@
-/* ================= RESET DASAR ================= */
+/* mulai CSS di bawah ini */
+.product-detail {
+  display: flex;
+  ...
+}
+
+
+/* === RESET DASAR === */
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +14,12 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fafafa;
+  background: #1a1a1a;
   color: #333;
-  line-height: 1.5;
-  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* ================= HEADER ================= */
+/* === HEADER === */
 header {
   display: flex;
   align-items: center;
@@ -34,7 +40,7 @@ header {
   text-decoration: none;
 }
 
-/* ================= BUTTON UTAMA ================= */
+/* === TOMBOL UTAMA === */
 .btn-primary {
   background-color: #0ea5a9;
   color: #fff;
@@ -50,7 +56,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* ================= GALLERY / PRODUK ================= */
+/* === GALERI PRODUK === */
 .gallery {
   width: 100%;
   padding: 60px 5%;
@@ -59,21 +65,25 @@ header {
   color: #000;
 }
 
+/* === GRID PRODUK 2 KOLOM === */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  justify-content: stretch;
+  align-items: stretch;
 }
 
+/* === KARTU PRODUK === */
 .product-card {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
@@ -95,35 +105,28 @@ header {
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.product-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.product-card p {
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
-
 .price {
   font-weight: 600;
   color: #9333ea;
   margin: 8px 0;
 }
 
+/* === TOMBOL PESAN (WHATSAPP) === */
 .wa-btn {
   display: inline-block;
   background: #25D366;
   color: #fff;
-  padding: 10px 22px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  transition: background 0.2s ease;
 }
-.wa-btn:hover { background: #1ebe5b; }
 
-/* ================= PROMO VIDEO ================= */
+.wa-btn:hover {
+  background: #128C7E;
+}
+
+/* === PROMO VIDEO / FOTO === */
 .promo-products {
   display: flex;
   justify-content: center;
@@ -143,7 +146,9 @@ header {
   transition: transform 0.3s ease;
 }
 
-.promo-item:hover { transform: scale(1.04); }
+.promo-item:hover {
+  transform: scale(1.04);
+}
 
 .promo-item img,
 .promo-item video {
@@ -155,33 +160,33 @@ header {
 
 .promo-caption {
   padding: 10px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-weight: 600;
   text-align: center;
   font-size: 0.9rem;
 }
 
-/* ================= SOSIAL MEDIA ================= */
+/* === SOSIAL MEDIA === */
 .social-links {
   display: flex;
-  gap: 20px;
-  padding: 20px 5%;
-  flex-wrap: wrap;
+  gap: 20px; /* jarak antar item */
 }
 
 .social-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* jarak ikon dan teks */
   text-decoration: none;
-  color: #000;
+  color: #000; /* warna teks */
   font-weight: 500;
 }
 
-.social-item img { display: block; }
+.social-item img {
+  display: block;
+}
 
-/* ================= INFO LIST ================= */
+/* === DAFTAR INFO === */
 .info-list {
   list-style: disc;
   color: #000;
@@ -189,17 +194,10 @@ header {
   line-height: 1.7;
   margin: 25px 0;
   padding-left: 25px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
-/* ================= FOOTER ================= */
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-}
-
-/* ================= TEKS BERGERAK ================= */
+/* === TEKS BERGERAK === */
 .judul-parfum {
   font-size: 2rem;
   font-weight: 700;
@@ -212,42 +210,202 @@ footer {
   overflow: hidden;
 }
 
+/* ==== EFEK GRADASI BERGERAK ==== */
 .moving-text {
   background: linear-gradient(90deg, #000, #5b21b6, #000);
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shineMove 6s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 @keyframes shineMove {
-  0% { background-position: 200% center; }
-  50% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: 200% center;
+  }
+  50% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
-/* ================= DETAIL PRODUK / SLIDER ================= */
-.product-detail {
+/* === DETAIL PRODUK === */
+.detail-produk,
+.detail-produk-2col {
+  background: #fff;
+  color: #000;
+  padding: 60px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
+}
+
+.detail-img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+.detail-info {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-info h2 {
+  font-size: 2rem;
+  color: #6b4c3b;
+}
+
+.detail-info .price {
+  font-size: 1.5rem;
+  color: #9333ea;
+  font-weight: 700;
+}
+
+.detail-info .size {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.detail-info .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Tombol pesan WhatsApp khusus di detail produk */
+.detail-info .wa-btn {
+  align-self: flex-start;
+  margin-top: 15px;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* === RESPONSIVE TABLET === */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .detail-produk,
+  .detail-produk-2col {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-img,
+  .detail-info {
+    max-width: 90%;
+  }
+
+  .detail-info {
+    text-align: center;
+  }
+
+  .detail-info .wa-btn {
+    margin: 20px auto 0 auto;
+  }
+}
+
+/* === RESPONSIVE HP === */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 40px 3%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .product-card {
+    max-width: 170px;
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .product-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .product-card p {
+    font-size: 0.8rem;
+  }
+
+  .wa-btn {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+
+/* === RESET DASAR === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden; /* penting supaya tidak muncul scroll horizontal */
+}
+
+/* === DETAIL PRODUK === */
+.product-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
   padding: 40px 20px;
+  background: transparent; /* biarkan bg parent */
+  color: #000;
+  border-radius: 20px;
+  /* beri max-width supaya tidak melebar berlebihan di layar besar */
   max-width: 1100px;
   margin: 0 auto;
   width: calc(100% - 40px);
+  flex-wrap: wrap;         /* => penting: biar turun ke baris baru di layar kecil */
+  overflow: visible;       /* jangan clipping anak */
+  scroll-behavior: smooth;
 }
 
+/* === SLIDER (BULAT & KECIL) === */
 .slider {
+  position: relative;
   flex: 0 0 250px;
   max-width: 250px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  padding: 12px;
+  margin: 0;               /* pusatkan lewat container, bukan body transform */
+  padding: 12px;           /* beri ruang sehingga lingkaran tidak menempel tepi layar */
 }
 
 .slides {
@@ -272,6 +430,7 @@ footer {
   display: block;
 }
 
+/* caption & bullets */
 .slide .caption {
   position: absolute;
   bottom: 0;
@@ -285,7 +444,14 @@ footer {
   border-radius: 0 0 50% 50%;
 }
 
-.navigation-manual { display: none; }
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  display: none;
+  justify-content: center;
+  gap: 8px;
+}
 
 .manual-btn {
   width: 10px;
@@ -297,19 +463,19 @@ footer {
 }
 .manual-btn:hover { background: #fff; }
 
-/* Kontrol slider */
+/* kontrol slider (tetap) */
 #img-1:checked ~ .slides { transform: translateX(0); }
 #img-2:checked ~ .slides { transform: translateX(-50%); }
 
-/* ================= PRODUCT INFO ================= */
+/* === TEKS PRODUK === */
 .product-info {
   flex: 0 0 380px;
-  max-width: 620px;
-  width: 100%;
   background: #fff;
   padding: 25px 30px;
   border-radius: 18px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 620px;
 }
 
 .product-info h1 {
@@ -326,24 +492,109 @@ footer {
   margin-bottom: 8px;
 }
 
-.product-info .size { color: #555; font-weight: 500; margin-bottom: 10px; }
-.product-info .desc { color: #333; line-height: 1.6; font-size: 0.95rem; margin-bottom: 18px; }
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .product-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .product-detail { flex-direction: column; align-items: center; gap: 18px; padding: 20px 12px; }
-  .slider { width: 100%; max-width: 350px; padding: 10px; margin-bottom: 10px; }
-  .product-info { width: 100%; max-width: 760px; padding: 18px; border-radius: 14px; }
-  .product-info h1 { font-size: 1.3rem; margin-bottom: 10px; }
-  .product-info .desc { font-size: 0.92rem; }
-  .wa-btn { width: 100%; padding: 9px 18px; font-size: 0.9rem; }
+.product-info .size {
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
+.product-info .desc {
+  color: #333;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.wa-btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.wa-btn:hover { background: #1ebe5b; }
+
+/* === RESPONSIF: PRESISI UNTUK HP === */
+/* === RESPONSIF: PRESISI UNTUK HP === */
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Mengatur .product-detail menjadi kolom pada tampilan HP */
+  .product-detail {
+    display: flex; /* pastikan menggunakan flexbox */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 20px 12px;
+  }
+
+  /* Mengatur ukuran slider agar lebih responsif */
+  .slider {
+    width: 100%; /* pastikan slider mengisi lebar penuh */
+    max-width: 350px; /* batasan lebar maksimum */
+    aspect-ratio: 1 / 1; /* memastikan rasio gambar tetap 1:1 */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Menyesuaikan info produk agar lebih pas di layar kecil */
+  .product-info {
+    width: 100%;
+    max-width: 760px; /* batasan lebar maksimal */
+    padding: 18px;
+    border-radius: 14px;
+    background-color: #fff; /* memberi warna latar belakang */
+  }
+
+  /* Ukuran font judul produk lebih kecil untuk mobile */
+  .product-info h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  /* Deskripsi produk agar tetap terbaca nyaman */
+  .product-info .desc {
+    font-size: 0.92rem;
+  }
+
+  /* Tombol WhatsApp lebih responsif */
+  .wa-btn {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+    width: 100%; /* tombol memenuhi lebar layar */
+  }
+}
+
+/* Tampilan untuk perangkat dengan lebar maksimal 380px (ponsel kecil) */
 @media (max-width: 380px) {
-  .slider { max-width: 170px; }
-  .product-info { padding: 14px; }
-  .product-info h1 { font-size: 1.15rem; }
-  .product-info .price { font-size: 1.05rem; }
-  .wa-btn { font-size: 0.8rem; }
+  .slider {
+    width: 100%; /* slider menyesuaikan lebar */
+    max-width: 170px;
+  }
+
+  .product-info {
+    padding: 14px;
+  }
+
+  /* Ukuran font judul produk lebih kecil */
+  .product-info h1 {
+    font-size: 1.15rem;
+  }
+
+  /* Menyesuaikan ukuran harga */
+  .product-info .price {
+    font-size: 1.05rem;
+  }
+
+  /* Tombol WhatsApp lebih kecil untuk ponsel kecil */
+  .wa-btn {
+    font-size: 0.8rem;
+  }
 }
