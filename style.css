@@ -1,10 +1,3 @@
-/* mulai CSS di bawah ini */
-.product-detail {
-  display: flex;
-  ...
-}
-
-
 /* === RESET DASAR === */
 * {
   margin: 0;
@@ -12,11 +5,18 @@
   box-sizing: border-box;
 }
 
+body, html {
+  width: 100%;
+  overflow-x: hidden; /* Menghindari scroll horizontal */
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: #1a1a1a;
+  background: #fafafa;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden; /* penting supaya tidak muncul scroll horizontal */
 }
 
 /* === HEADER === */
@@ -72,6 +72,8 @@ header {
   gap: 40px;
   justify-content: stretch;
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;  /* pastikan grid mengambil seluruh lebar layar */
 }
 
 /* === KARTU PRODUK === */
@@ -84,6 +86,9 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .product-card:hover {
@@ -300,8 +305,21 @@ footer {
 /* === RESPONSIVE TABLET === */
 @media (max-width: 768px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product-card {
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .gallery {
+    padding: 40px 3%;
   }
 
   .detail-produk,
@@ -309,269 +327,4 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-
-  .detail-img,
-  .detail-info {
-    max-width: 90%;
-  }
-
-  .detail-info {
-    text-align: center;
-  }
-
-  .detail-info .wa-btn {
-    margin: 20px auto 0 auto;
-  }
-}
-
-/* === RESPONSIVE HP === */
-@media (max-width: 480px) {
-  .gallery {
-    padding: 40px 3%;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .product-card {
-    max-width: 170px;
-    padding: 10px;
-  }
-
-  .product-card img {
-    height: 160px;
-  }
-
-  .product-card h3 {
-    font-size: 0.9rem;
-  }
-
-  .product-card p {
-    font-size: 0.8rem;
-  }
-
-  .wa-btn {
-    font-size: 0.8rem;
-    padding: 6px 8px;
-  }
-}
-
-
-/* === RESET DASAR === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.5;
-  width: 100%;
-  overflow-x: hidden; /* penting supaya tidak muncul scroll horizontal */
-}
-
-/* === DETAIL PRODUK === */
-.product-detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px 20px;
-  background: transparent; /* biarkan bg parent */
-  color: #000;
-  border-radius: 20px;
-  /* beri max-width supaya tidak melebar berlebihan di layar besar */
-  max-width: 1100px;
-  margin: 0 auto;
-  width: calc(100% - 40px);
-  flex-wrap: wrap;         /* => penting: biar turun ke baris baru di layar kecil */
-  overflow: visible;       /* jangan clipping anak */
-  scroll-behavior: smooth;
-}
-
-/* ================= SLIDER (BULAT & KECIL) ================= */
-.slider {
-  position: relative;
-  flex: 0 0 250px;
-  max-width: 250px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  margin: 0;
-  padding: 12px;
-}
-
-/* ================= RESPONSIVE SLIDER ================= */
-@media (max-width: 768px) {
-  .product-detail {
-    flex-direction: column; /* slider di atas info produk */
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-  }
-
-  .slider {
-    width: 60%;          /* lebih kecil dari layar */
-    max-width: 300px;
-    aspect-ratio: 1 / 1;
-    margin-bottom: 10px; /* beri jarak dari product-info */
-    flex: 0 0 auto;
-  }
-
-  .product-info {
-    width: 90%;          /* menyesuaikan layar */
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider {
-    width: 80%;          /* slider lebih lebar supaya proporsional */
-    max-width: 250px;
-  }
-
-  .product-info {
-    width: 95%;
-    padding: 15px;
-  }
-}
-
-/* === TEKS PRODUK === */
-.product-info {
-  flex: 0 0 380px;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 620px;
-}
-
-.product-info h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.product-info .price {
-  color: #7a00ff;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.product-info .size {
-  color: #555;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.product-info .desc {
-  color: #333;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin-bottom: 18px;
-}
-
-.wa-btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.wa-btn:hover { background: #1ebe5b; }
-
-/* === RESPONSIF: PRESISI UNTUK HP === */
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Product Detail */
-  .product-detail {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 0 10px;   /* pakai 10px saja, jangan % */
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Slider */
-  .slider {
-    flex: 0 0 auto;
-    width: 90%;        /* lebih lebar, tapi pasti di layar */
-    max-width: 250px;
-    aspect-ratio: 1/1;
-    padding: 0;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  /* Product Info */
-  .product-info {
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 100%;   /* jangan batasi lagi */
-    padding: 12px;
-    border-radius: 12px;
-    box-sizing: border-box;
-  }
-
-  /* Typography & tombol */
-  .product-info h1 { font-size: 1.3rem; }
-  .product-info .desc { font-size: 0.9rem; }
-  .wa-btn { padding: 8px 14px; font-size: 0.9rem; display: inline-block; }
-
-  /* Gallery */
-  .gallery {
-    padding: 40px 10px; /* jangan terlalu besar */
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .product-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .product-card img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-}
-
-/* Very small phones (<380px) */
-@media (max-width: 380px) {
-  .slider { width: 95%; max-width: 180px; }
-  .product-info { padding: 10px; width: 100%; max-width: 100%; }
-  .product-info h1 { font-size: 1.1rem; }
-  .product-info .price { font-size: 1rem; }
-  .wa-btn { padding: 7px 12px; font-size: 0.85rem; }
-
-  .product-grid { gap: 8px; }
-  .product-card img { height: auto; }
-}
 
