@@ -1,8 +1,18 @@
-document.getElementById('review-form').addEventListener('submit', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
+  const reviewForm = document.getElementById('review-form');
+  const reviewList = document.getElementById('review-list');
+
+  reviewForm.addEventListener('submit', function (e) {
     e.preventDefault(); // Mencegah halaman reload
 
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment').value;
+
+    // Periksa jika nama atau komentar kosong
+    if (!name || !comment) {
+      alert('Nama dan komentar harus diisi!');
+      return;
+    }
 
     // Membuat elemen ulasan baru
     const reviewItem = document.createElement('div');
@@ -16,8 +26,9 @@ document.getElementById('review-form').addEventListener('submit', function (e) {
     `;
 
     // Menambahkan ulasan ke dalam daftar
-    document.getElementById('review-list').appendChild(reviewItem);
+    reviewList.appendChild(reviewItem);
 
     // Reset formulir setelah mengirim
-    document.getElementById('review-form').reset();
+    reviewForm.reset();
+  });
 });
