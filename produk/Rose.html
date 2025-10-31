@@ -5,8 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Scant Rose - Parfum aroma mawar lembut dan elegan, cocok untuk suasana romantis maupun harian.">
   <title>Scant Rose - Detail Produk | Scant Parfum</title>
-
   <link rel="stylesheet" href="../style.css?v=5">
+  <style>
+    /* === DETAIL PRODUK === */
+    .product-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px;
+      background: transparent;
+      color: #000;
+      border-radius: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: calc(100% - 40px);
+      flex-wrap: wrap; /* Memastikan elemen bisa berpindah baris pada layar kecil */
+      overflow: visible;
+      scroll-behavior: smooth;
+    }
+
+    /* Gambar Produk - Bulat */
+    .slider {
+      flex: 0 0 250px;
+      max-width: 250px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%; /* Membuat gambar menjadi bulat */
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      margin: 0;
+      padding: 12px;
+    }
+
+    /* Info Produk */
+    .product-info {
+      flex: 1;
+      max-width: 500px;
+      padding: 25px;
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-info h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .product-info .price {
+      color: #7a00ff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info .size {
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .product-info .desc {
+      color: #333;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .wa-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .wa-btn:hover { background: #1ebe5b; }
+
+    /* ===== RESPONSIVE HP ===== */
+    @media (max-width: 768px) {
+      .product-detail {
+        flex-direction: column; /* Mengubah arah layout menjadi kolom pada perangkat kecil */
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .slider {
+        flex: 0 0 auto;
+        width: 90%; /* Slider lebih lebar, tapi tetap di layar */
+        max-width: 250px;
+        aspect-ratio: 1/1;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      .product-info {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      .product-info h1 { font-size: 1.3rem; }
+      .product-info .desc { font-size: 0.9rem; }
+      .wa-btn { padding: 8px 14px; font-size: 0.9rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,6 +133,7 @@
 
   <!-- DETAIL PRODUK -->
   <section class="product-detail">
+    <!-- Gambar Produk -->
     <div class="slider">
       <input type="radio" name="radio-btn" id="img-1" checked>
       <input type="radio" name="radio-btn" id="img-2">
@@ -39,6 +156,7 @@
       </div>
     </div>
 
+    <!-- Info Produk -->
     <div class="product-info">
       <h1>Scant Rose</h1>
       <p class="price">Rp 250.000</p>
@@ -66,7 +184,6 @@
     <li>Harga terjangkau untuk semua</li>
     <li>Layanan pelanggan ramah & siap membantu</li>
   </ul>
-
 
   <!-- FOOTER -->
   <footer>
