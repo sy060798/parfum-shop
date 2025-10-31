@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Scant Rose - Parfum aroma mawar lembut dan elegan, cocok untuk suasana romantis maupun harian.">
   <title>Scant Rose - Detail Produk | Scant Parfum</title>
+  <link rel="stylesheet" href="../style.css?v=5">
   <style>
     /* === DETAIL PRODUK === */
     .product-detail {
@@ -19,77 +20,117 @@
       max-width: 1100px;
       margin: 0 auto;
       width: calc(100% - 40px);
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Memastikan elemen bisa berpindah baris pada layar kecil */
+      overflow: visible;
       scroll-behavior: smooth;
     }
 
-    /* === Slider Produk === */
+    /* Gambar Produk - Bulat */
     .slider {
-      flex: 0 0 100%;
-      max-width: 100%;
+      flex: 0 0 250px;
+      max-width: 250px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%; /* Membuat gambar menjadi bulat */
       overflow: hidden;
+      background: #fff;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      margin: 0;
+      padding: 12px;
       position: relative;
     }
 
-    .slider-wrapper {
+    .slides {
       display: flex;
-      width: 300%; /* Setel lebar total agar 3 gambar muncul secara horizontal */
-      transition: transform 0.5s ease;
-      cursor: grab; /* Menunjukkan bahwa elemen ini bisa digeser */
+      transition: transform 0.5s ease-in-out;
     }
 
     .slide {
-      width: 100%; /* Setiap gambar mengambil 100% lebar dari slider */
-      flex-shrink: 0;
+      min-width: 100%;
       position: relative;
     }
 
     .slider img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 50%; /* Membuat gambar bulat */
+      object-fit: cover; /* Memastikan gambar mengisi seluruh area lingkaran dengan proporsi yang benar */
     }
 
-    /* === INFO PRODUK === */
-    .product-info {
-      flex: 1 1 100%;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 100%;
+    /* Tombol navigasi manual */
+    .navigation-manual {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .manual-btn {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .manual-btn:hover {
+      background-color: #1ebe5b;
+    }
+
+    /* CSS untuk Animasi Transisi Gambar */
+    input[type="radio"] {
+      display: none;
+    }
+
+    input#img-1:checked ~ .slides {
+      transform: translateX(0);
+    }
+
+    input#img-2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+
+    input#img-3:checked ~ .slides {
+      transform: translateX(-200%);
     }
 
     /* === RESPONSIVE HP === */
     @media (max-width: 768px) {
       .product-detail {
-        flex-direction: column;
+        flex-direction: column; /* Mengubah arah layout menjadi kolom pada perangkat kecil */
+        align-items: center;
+        justify-content: flex-start;
         gap: 20px;
-        padding: 10px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .slider {
+        flex: 0 0 auto;
+        width: 90%; /* Slider lebih lebar, tapi tetap di layar */
         max-width: 250px;
+        aspect-ratio: 1/1;
+        padding: 0;
         margin: 0 auto;
       }
 
       .product-info {
+        flex: 1 1 100%;
+        width: 100%;
         max-width: 100%;
+        padding: 12px;
+        border-radius: 12px;
       }
+
+      .product-info h1 { font-size: 1.3rem; }
+      .product-info .desc { font-size: 0.9rem; }
+      .wa-btn { padding: 8px 14px; font-size: 0.9rem; }
     }
 
     /* === WA BUTTON === */
-    .wa-btn {
-      background-color: #25d366;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: center;
-      display: inline-block;
-    }
-
-    .wa-btn:hover { background-color: #128c7e; }
+    .wa-btn:hover { background: #1ebe5b; }
 
     /* === INFO LIST === */
     .info-list {
@@ -101,7 +142,6 @@
       padding-left: 25px;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
     }
-
   </style>
 </head>
 <body>
@@ -115,16 +155,30 @@
   <section class="product-detail">
     <!-- Gambar Produk -->
     <div class="slider">
-      <div class="slider-wrapper">
-        <div class="slide">
+      <input type="radio" name="radio-btn" id="img-1" checked>
+      <input type="radio" name="radio-btn" id="img-2">
+      <input type="radio" name="radio-btn" id="img-3">
+
+      <div class="slides">
+        <div class="slide first">
           <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 1">
+          <div class="caption">Tampilan elegan dari Scant Rose</div>
         </div>
         <div class="slide">
           <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 2">
+          <div class="caption">Detail botol parfum Scant Rose</div>
         </div>
         <div class="slide">
           <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 3">
+          <div class="caption">Desain botol Scant Rose</div>
         </div>
+      </div>
+
+      <!-- Tombol navigasi manual -->
+      <div class="navigation-manual">
+        <label for="img-1" class="manual-btn"></label>
+        <label for="img-2" class="manual-btn"></label>
+        <label for="img-3" class="manual-btn"></label>
       </div>
     </div>
 
@@ -163,40 +217,12 @@
   </footer>
 
   <script>
-    // Menambahkan fungsi untuk menggulir gambar secara manual dengan scroll (geser)
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
-
-    // Ketika mouse menekan (drag)
-    sliderWrapper.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.pageX - sliderWrapper.offsetLeft;
-      scrollLeft = sliderWrapper.scrollLeft;
-      sliderWrapper.style.cursor = 'grabbing';
-    });
-
-    // Ketika mouse dilepas
-    sliderWrapper.addEventListener('mouseup', () => {
-      isDragging = false;
-      sliderWrapper.style.cursor = 'grab';
-    });
-
-    // Ketika mouse bergerak
-    sliderWrapper.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      const x = e.pageX - sliderWrapper.offsetLeft;
-      const walk = (x - startX) * 1.5; // Sensitivitas geser
-      sliderWrapper.scrollLeft = scrollLeft - walk;
-    });
-
-    // Jika mouse meninggalkan area slider
-    sliderWrapper.addEventListener('mouseleave', () => {
-      isDragging = false;
-      sliderWrapper.style.cursor = 'grab';
-    });
+    let counter = 1;
+    setInterval(() => {
+      document.getElementById('img-' + counter).checked = true;
+      counter++;
+      if (counter > 3) counter = 1;
+    }, 4000);
   </script>
 
 </body>
