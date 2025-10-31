@@ -175,6 +175,7 @@ header {
 /* === SOSIAL MEDIA === */
 .social-links {
   display: flex;
+  flex-direction: column; /* Mengubah menjadi kolom supaya item menurun */
   gap: 20px; /* jarak antar item */
 }
 
