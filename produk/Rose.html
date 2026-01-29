@@ -57,20 +57,31 @@
     <h2>Ulasan Produk</h2>
 
     <!-- Formulir Ulasan -->
-    <form id="review-form" class="review-form">
-      <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" />
+  <form
+  id="review-form"
+  class="review-form"
+  action="https://wa.me/6281384248717"
+  method="GET"
+  target="_blank"
+>
+  <label>Nama:</label>
+  <input type="text" name="text" id="name" required placeholder="Masukkan nama Anda">
 
-      <label for="comment">Komentar:</label>
-      <textarea id="comment" name="comment" rows="5" required placeholder="Tulis komentar atau ulasan Anda"></textarea>
+  <label>Komentar:</label>
+  <textarea id="comment" required placeholder="Tulis komentar atau ulasan Anda"></textarea>
 
-      <button type="submit" id="submit-btn" class="submit-btn">Kirim Ulasan</button>
-    </form>
+  <!-- TEXT WA TERSEMBUNYI -->
+  <input type="hidden" name="text" id="wa-text">
 
-       <!-- INFO TERKIRIM -->
-    <p id="review-status" style="display:none; color:green; margin-top:10px;">
-      ✅ Ulasan berhasil dikirim ke admin. Terima kasih 🙏
-    </p>
+  <button type="submit" class="submit-btn">
+    Kirim Ulasan
+  </button>
+</form>
+
+<p id="review-status" style="display:none; color:green; margin-top:10px;">
+  ✅ Ulasan berhasil dikirim ke admin. Terima kasih 🙏
+</p>
+
 
   </section> <!-- ❗ PENUTUP SECTION REVIEWS -->
 
