@@ -1,21 +1,22 @@
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const reviewForm = document.getElementById('review-form');
-  const statusText = document.getElementById('review-status');
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("✅ Script loaded"); // DEBUG
+
+  const reviewForm = document.getElementById("review-form");
+  const statusText = document.getElementById("review-status");
 
   if (!reviewForm || !statusText) {
-    console.log("Form atau status tidak ditemukan");
+    console.error("❌ Form atau status tidak ditemukan");
     return;
   }
 
-  reviewForm.addEventListener('submit', function (e) {
+  reviewForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const comment = document.getElementById('comment').value.trim();
+    const name = document.getElementById("name").value.trim();
+    const comment = document.getElementById("comment").value.trim();
 
     if (!name || !comment) {
-      alert('Nama dan komentar harus diisi!');
+      alert("Nama dan komentar harus diisi!");
       return;
     }
 
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
       `Halo Admin\n\nAda ulasan baru:\nNama: ${name}\nKomentar:\n${comment}`
     );
 
-    // 🔥 BUKA WHATSAPP (AMAN UNTUK HP)
+    // 🔥 BUKA WHATSAPP
     window.open(`https://wa.me/${adminWA}?text=${message}`, "_blank");
 
     // Reset form
@@ -39,4 +40,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 5000);
   });
 });
-</script>
