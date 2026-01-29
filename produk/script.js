@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const reviewForm = document.getElementById('review-form');
   const statusText = document.getElementById('review-status');
 
+  if (!reviewForm || !statusText) return;
+
   reviewForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -14,23 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // 🔥 KIRIM KE WHATSAPP ADMIN
-    const adminWA = "6281384248717"; // GANTI NOMOR ADMIN
-    const message =
-      `Halo Admin,%0A%0A` +
-      `Ada ulasan baru:%0A` +
-      `Nama: ${name}%0A` +
-      `Komentar:%0A${comment}`;
+    const adminWA = "6281384248717";
 
-    window.open(`https://wa.me/${adminWA}?text=${message}`, "_blank");
+    const message = encodeURIComponent(
+      `Halo Admin\n\nAda ulasan baru:\nNama: ${name}\nKomentar:\n${comment}`
+    );
 
-    // Reset form
+    window.location.href = `https://wa.me/${adminWA}?text=${message}`;
+
     reviewForm.reset();
-
-    // Tampilkan pesan sukses
     statusText.style.display = "block";
 
-    // Sembunyikan lagi setelah 5 detik
     setTimeout(() => {
       statusText.style.display = "none";
     }, 5000);
