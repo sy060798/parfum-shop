@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const reviewForm = document.getElementById('review-form');
   const statusText = document.getElementById('review-status');
 
-  if (!reviewForm || !statusText) return;
+  if (!reviewForm || !statusText) {
+    console.log("Form atau status tidak ditemukan");
+    return;
+  }
 
   reviewForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -16,15 +19,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    const adminWA = "6281384248717";
+    const adminWA = "6281384248717"; // NOMOR ADMIN
 
     const message = encodeURIComponent(
       `Halo Admin\n\nAda ulasan baru:\nNama: ${name}\nKomentar:\n${comment}`
     );
 
+    // 🔥 BUKA WHATSAPP (AMAN UNTUK HP)
     window.location.href = `https://wa.me/${adminWA}?text=${message}`;
 
+    // Reset form
     reviewForm.reset();
+
+    // Tampilkan pesan sukses
     statusText.style.display = "block";
 
     setTimeout(() => {
