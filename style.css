@@ -351,3 +351,10 @@ footer {
   margin: 0;
 }
 
+
+/* === FORCE GRID (FIX FINAL) === */
+.product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 40px;
+}
