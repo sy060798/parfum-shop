@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     // 🔥 BUKA WHATSAPP (AMAN UNTUK HP)
-    window.location.href = `https://wa.me/${adminWA}?text=${message}`;
+    window.open(`https://wa.me/${adminWA}?text=${message}`, "_blank");
 
     // Reset form
     reviewForm.reset();
