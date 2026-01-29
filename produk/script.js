@@ -1,42 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("✅ Script loaded"); // DEBUG
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("review-form");
+  const status = document.getElementById("review-status");
+  const waText = document.getElementById("wa-text");
 
-  const reviewForm = document.getElementById("review-form");
-  const statusText = document.getElementById("review-status");
-
-  if (!reviewForm || !statusText) {
-    console.error("❌ Form atau status tidak ditemukan");
-    return;
-  }
-
-  reviewForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
+  form.addEventListener("submit", () => {
     const name = document.getElementById("name").value.trim();
     const comment = document.getElementById("comment").value.trim();
 
-    if (!name || !comment) {
-      alert("Nama dan komentar harus diisi!");
-      return;
-    }
+    waText.value =
+      `Halo Admin\n\n` +
+      `Ada ulasan baru:\n` +
+      `Nama: ${name}\n` +
+      `Komentar:\n${comment}`;
 
-    const adminWA = "6281384248717"; // NOMOR ADMIN
-
-    const message = encodeURIComponent(
-      `Halo Admin\n\nAda ulasan baru:\nNama: ${name}\nKomentar:\n${comment}`
-    );
-
-    // 🔥 BUKA WHATSAPP
-   window.location.href = `https://wa.me/${adminWA}?text=${message}`;
-
-    // Reset form
-    reviewForm.reset();
-
-    // Tampilkan pesan sukses
-    statusText.style.display = "block";
-
-    setTimeout(() => {
-      statusText.style.display = "none";
-    }, 5000);
+    status.style.display = "block";
   });
 });
