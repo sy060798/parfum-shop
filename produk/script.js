@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 🔥 KIRIM KE WHATSAPP ADMIN
-    const adminWA = "6281234567890"; // GANTI NOMOR ADMIN
+    const adminWA = "6281384248717"; // GANTI NOMOR ADMIN
     const message =
       `Halo Admin,%0A%0A` +
       `Ada ulasan baru:%0A` +
