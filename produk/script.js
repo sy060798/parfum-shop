@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     // 🔥 BUKA WHATSAPP
-    window.open(`https://wa.me/${adminWA}?text=${message}`, "_blank");
+   window.location.href = `https://wa.me/${adminWA}?text=${message}`;
 
     // Reset form
     reviewForm.reset();
