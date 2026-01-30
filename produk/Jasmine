@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Scant Rose - Parfum aroma mawar lembut dan elegan, cocok untuk suasana romantis maupun harian." />
+  <title>Scant Oud - Detail Produk | Scant Parfum</title>
+
+  <!-- Link CSS khusus untuk halaman produk -->
+  <link rel="stylesheet" href="../produk/style.css?v=5"> <!-- Mengarah ke folder produk -->
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html" class="logo">Scant Parfum</a>
+  </header>
+
+  <!-- DETAIL PRODUK -->
+  <section class="product-detail">
+    <!-- Gambar Produk (Slider) -->
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 1">
+        </div>
+        <div class="slide">
+          <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 2">
+        </div>
+        <div class="slide">
+          <img src="https://sy060798.github.io/parfum-shop/images/download.jfif" alt="Scant Parfum 3">
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Produk -->
+    <div class="product-info">
+      <h1>Scant Oud</h1>
+      <p class="price">Rp 250.000</p>
+      <p class="size">Ukuran: 100ml</p>
+      <p class="desc">Aroma mawar lembut dan elegan yang menghadirkan suasana romantis dalam setiap semprotan.</p>
+      
+      <!-- Tombol Pesan WhatsApp dan Keranjang -->
+      <a href="https://wa.me/6281384248717" class="wa-btn">Pesan via WhatsApp</a>
+      
+
+      <!-- Deskripsi Detail Produk -->
+      <p class="product-details">
+        Scant Oud adalah parfum dengan campuran bunga mawar alami dan rempah lembut yang memberikan kesan segar dan elegan sepanjang hari. Diciptakan untuk para wanita yang suka kelembutan dan keanggunan yang tidak berlebihan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ulasan Produk -->
+  <section class="reviews">
+    <h2>Ulasan Produk</h2>
+
+    <!-- Formulir Ulasan -->
+ <form
+  id="review-form"
+  class="review-form"
+  action="https://wa.me/6281384248717"
+  method="GET"
+  target="_blank"
+>
+  <label>Nama:</label>
+  <input type="text" id="name" required placeholder="Masukkan nama Anda">
+
+  <label>Komentar:</label>
+  <textarea id="comment" required placeholder="Tulis komentar atau ulasan Anda"></textarea>
+
+  <input type="hidden" name="text" id="wa-text">
+
+  <button type="submit" class="submit-btn">
+    Kirim Ulasan
+  </button>
+</form>
+
+<p id="review-status" style="display:none; color:green; margin-top:10px;">
+  ✅ Ulasan berhasil dikirim ke admin. Terima kasih 🙏
+</p>
+
+  </section> <!-- ❗ PENUTUP SECTION REVIEWS -->
+
+  <hr class="pemisah-section" />
+
+  <!-- INFO LIST -->
+  <ul class="info-list">
+    <li>Kualitas aroma premium</li>
+    <li>Pengiriman cepat dan aman</li>
+    <li>Harga terjangkau untuk semua</li>
+    <li>Layanan pelanggan ramah & siap membantu</li>
+  </ul>
+
+  <hr class="pemisah-section" />
+
+  <footer>
+    <p>&copy; 2025 Scant Parfum | Dirancang oleh Ahmah Sayhril</p>
+  </footer>
+
+  <!-- Link JS untuk halaman produk -->
+  <script src="script.js"></script>
+
+
+</body>
+</html>
